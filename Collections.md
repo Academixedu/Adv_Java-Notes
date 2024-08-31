@@ -374,13 +374,11 @@ Implements the Set interface using a hash table.
 Provides constant-time performance for basic operations (add, remove, contains) on average.
 Does not maintain the order of elements.
 
-- **LinkedHashSet:**
+- **LinkedHashSet:**Extends HashSet and maintains a linked list of the entries to preserve the insertion order.
+    Provides predictable iteration order.
 
-Extends HashSet and maintains a linked list of the entries to preserve the insertion order.
-Provides predictable iteration order.
-
-- **TreeSet:**
-
-Implements the Set interface using a red-black tree.
+- **TreeSet:**Implements the Set interface using a red-black tree.
 Maintains elements in a sorted order.
 Provides logarithmic time performance for the basic operations (add, remove, contains).
+
+<h3>🔖HashSet</h3>
