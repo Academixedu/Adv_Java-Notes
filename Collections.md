@@ -40,17 +40,22 @@ ArrayList is one of the most widely used classes in the Java Collections Framewo
 
 **Features**  
 - **Resizable Array:** Automatically increases its size when more elements are added.
+
 - **Efficient Random Access:** Ideal for scenarios where you need to frequently access elements by their index.
+
 - **Non-Synchronized:** Not thread-safe unless externally synchronized.
+
 - **Maintains Insertion Order:** Elements are stored in the order they were added.
+
 - **Allows Duplicates:** You can add duplicate elements to the list. 
 
 **When to Use:**
+
 When you need to frequently retrieve elements by index.
+
 When the list size changes infrequently or when elements are mostly added at the end of the list.
 
 ---
-
 ### Initial State of ArrayList
 
 
