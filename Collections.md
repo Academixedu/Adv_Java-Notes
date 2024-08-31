@@ -407,11 +407,10 @@ It represents a collection that does not allow duplicate elements and does not m
 
 ---
 ### Initial State of HashSet
-HashSet: []
+> HashSet: []
 ---
 ### Adding an Element
 **Step 1**
-
 New Element: Mango
 The hashCode() method of Mango is called, and an index is calculated.
 **Step 2**
@@ -462,9 +461,10 @@ Does the set contain Apple? Yes
 ---
 
 ### **Clearing the Set**
-Step 1
+
+**Step 1**
 Clear all elements from the HashSet.
 
-Step 2
+**Step 2**
 HashSet after clearing:
 [] (Empty Set) // Size = 0
