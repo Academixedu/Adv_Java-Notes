@@ -1234,3 +1234,41 @@ Scanner in=new Scanner(System.in);
     }
 }
 ```
+## **Map Interface**
+The Map interface is a part of the Java Collections Framework and represents a collection that maps unique keys to values. It allows for the storage of key-value pairs, where each key is associated with a specific value. Maps are used for efficiently retrieving values based on keys.
+
+### **Key Characteristics:**
+**Key-Value Pair:** A map consists of key-value pairs, allowing easy access to values via their corresponding keys.
+
+**Uniqueness of Keys:** Each key in a map must be unique. If you attempt to add a duplicate key, the existing value is replaced.
+
+**Dynamic Size:** Maps automatically adjust their size as elements are added or removed.
+
+### **Functions in the Map Interface:**
+**V put(K key, V value):** Adds the specified key-value pair to the map. If the key already exists, the value is updated.
+
+**V get(Object key):** Returns the value associated with the specified key, or null if the key does not exist.
+
+**V remove(Object key):** Removes the key-value pair for the specified key if it is present.
+
+**boolean containsKey(Object key):** Returns true if the map contains the specified key.
+
+**boolean containsValue(Object value):** Returns true if the map maps one or more keys to the specified value.
+
+**int size():** Returns the number of key-value pairs in the map.
+
+**boolean isEmpty():** Returns true if the map contains no key-value pairs.
+
+**Set<K> keySet():** Returns a set view of the keys contained in the map.
+
+**Collection<V> values():** Returns a collection view of the values contained in the map.
+
+**Set<Map.Entry<K, V>> entrySet():** Returns a set view of the mappings contained in the map.
+
+### **Common Subclasses of the Map Interface:**
+
+**HashMap:** Implements the Map interface using a hash table. Provides constant-time performance for basic operations (put, remove, contains) on average.
+
+**LinkedHashMap:** Extends HashMap and maintains a linked list of the entries to preserve the insertion order. Provides predictable iteration order.
+
+TreeMap: Implements the Map interface using a red-black tree. Maintains the keys in a sorted order. Provides logarithmic time performance for basic operations (put, remove, contains).
