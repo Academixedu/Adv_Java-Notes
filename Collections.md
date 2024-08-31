@@ -1273,23 +1273,111 @@ The Map interface is a part of the Java Collections Framework and represents a c
 
 TreeMap: Implements the Map interface using a red-black tree. Maintains the keys in a sorted order. Provides logarithmic time performance for basic operations (put, remove, contains).
 
-🟢 HashMap
+<h3>🟢 HashMap</h3>
 HashMap is part of the Java Collections Framework and implements the Map interface. It represents a collection of key-value pairs where each key is unique. The HashMap allows for efficient retrieval and manipulation of data based on keys.
 
-Key Features of HashMap
-Key-Value Pair: Stores data in key-value pairs, allowing for efficient access to values based on keys.
+### **Key Features of HashMap**
 
-No Duplicate Keys: Each key must be unique. If a duplicate key is added, the existing value is replaced with the new value.
+**Key-Value Pair:** Stores data in key-value pairs, allowing for efficient access to values based on keys.
 
-Dynamic Size: The size of the HashMap grows automatically as elements are added.
+**No Duplicate Keys:** Each key must be unique. If a duplicate key is added, the existing value is replaced with the new value.
 
-Non-Synchronized: Not thread-safe unless externally synchronized.
+**Dynamic Size:** The size of the HashMap grows automatically as elements are added.
 
-Performance: Provides constant-time performance for basic operations like put, get, and remove, on average.
+**Non-Synchronized:** Not thread-safe unless externally synchronized.
 
-Internal Mechanism of HashMap
-Hashing: HashMap uses a hash table to store the key-value pairs. Each key is hashed to determine its position in the table.
+**Performance:** Provides constant-time performance for basic operations like put, get, and remove, on average.
 
-Buckets: The table is divided into buckets, and each bucket can hold multiple key-value pairs (in case of hash collisions). This allows for efficient storage and retrieval.
+### **Internal Mechanism of HashMap**
 
-Load Factor: The load factor determines when to increase the size of the map. The default load factor is 0.75, which offers a good balance between time and space cost.
+**Hashing:** HashMap uses a hash table to store the key-value pairs. Each key is hashed to determine its position in the table.
+
+**Buckets:** The table is divided into buckets, and each bucket can hold multiple key-value pairs (in case of hash collisions). This allows for efficient storage and retrieval.
+
+**Load Factor:** The load factor determines when to increase the size of the map. The default load factor is 0.75, which offers a good balance between time and space cost.
+
+```java
+import java.util.HashMap;
+
+public class HashMapExample {
+    public static void main(String[] args) {
+        // Creating a HashMap
+        HashMap<String, Integer> map = new HashMap<>();
+
+        // Adding elements to the HashMap
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Cherry", 3);
+
+        // Displaying the HashMap
+        System.out.println("Initial HashMap: " + map); // Output: {Apple=1, Banana=2, Cherry=3}
+
+        // Adding a duplicate key (updates the value)
+        map.put("Apple", 4);
+        System.out.println("After adding duplicate key Apple: " + map); // Output: {Apple=4, Banana=2, Cherry=3}
+
+        // Retrieving a value
+        int appleCount = map.get("Apple");
+        System.out.println("Count of Apples: " + appleCount); // Output: Count of Apples: 4
+
+        // Checking if a key exists
+        boolean hasBanana = map.containsKey("Banana");
+        System.out.println("Does the map contain Banana? " + hasBanana); // Output: true
+
+        // Removing an element
+        map.remove("Banana");
+        System.out.println("After removing Banana: " + map); // Output: {Apple=4, Cherry=3}
+
+        // Clearing the map
+        map.clear();
+        System.out.println("After clearing the map: " + map); // Output: {}
+    }
+}
+```
+Person Class Implementation
+```java
+import java.util.HashMap;
+
+public class HashMapPersonExample {
+    public static void main(String[] args) {
+        // Creating a HashMap to store Person objects with pid as the key
+        HashMap<Integer, Person> personMap = new HashMap<>();
+
+        // Creating Person objects
+        Person person1 = new Person(1, "Alice", 50000.0, "Developer");
+        Person person2 = new Person(2, "Bob", 60000.0, "Designer");
+        Person person3 = new Person(3, "Charlie", 70000.0, "Manager");
+
+        // Adding Person objects to the HashMap
+        personMap.put(person1.getPid(), person1);
+        personMap.put(person2.getPid(), person2);
+        personMap.put(person3.getPid(), person3);
+
+        // Displaying the HashMap
+        System.out.println("Initial HashMap:");
+        for (Person person : personMap.values()) {
+            System.out.println(person);
+        }
+
+        // Retrieving a Person object by pid
+        Person retrievedPerson = personMap.get(2);
+        System.out.println("\nRetrieved Person with pid 2: " + retrievedPerson);
+
+        // Updating a Person object
+        person2.setPsal(65000.0); // Updating salary
+        personMap.put(person2.getPid(), person2); // Update in the map
+        System.out.println("\nUpdated Person with pid 2: " + personMap.get(2));
+
+        // Removing a Person object
+        personMap.remove(1); // Remove person with pid 1
+        System.out.println("\nHashMap after removing person with pid 1:");
+        for (Person person : personMap.values()) {
+            System.out.println(person);
+        }
+
+        // Clearing the HashMap
+        personMap.clear();
+        System.out.println("\nHashMap after clearing: " + personMap);
+    }
+}
+```
