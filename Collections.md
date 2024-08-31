@@ -1337,47 +1337,21 @@ public class HashMapExample {
 Person Class Implementation
 ```java
 import java.util.HashMap;
+import java.util.Map;
 
-public class HashMapPersonExample {
+public class HahsMapExp {
     public static void main(String[] args) {
-        // Creating a HashMap to store Person objects with pid as the key
-        HashMap<Integer, Person> personMap = new HashMap<>();
+        
+        HashMap<Person, String> personMap = new HashMap<>();
 
-        // Creating Person objects
-        Person person1 = new Person(1, "Alice", 50000.0, "Developer");
-        Person person2 = new Person(2, "Bob", 60000.0, "Designer");
-        Person person3 = new Person(3, "Charlie", 70000.0, "Manager");
-
-        // Adding Person objects to the HashMap
-        personMap.put(person1.getPid(), person1);
-        personMap.put(person2.getPid(), person2);
-        personMap.put(person3.getPid(), person3);
-
-        // Displaying the HashMap
-        System.out.println("Initial HashMap:");
-        for (Person person : personMap.values()) {
-            System.out.println(person);
-        }
-
-        // Retrieving a Person object by pid
-        Person retrievedPerson = personMap.get(2);
-        System.out.println("\nRetrieved Person with pid 2: " + retrievedPerson);
-
-        // Updating a Person object
-        person2.setPsal(65000.0); // Updating salary
-        personMap.put(person2.getPid(), person2); // Update in the map
-        System.out.println("\nUpdated Person with pid 2: " + personMap.get(2));
-
-        // Removing a Person object
-        personMap.remove(1); // Remove person with pid 1
-        System.out.println("\nHashMap after removing person with pid 1:");
-        for (Person person : personMap.values()) {
-            System.out.println(person);
-        }
-
-        // Clearing the HashMap
-        personMap.clear();
-        System.out.println("\nHashMap after clearing: " + personMap);
+        
+        personMap.put( new Person(1, "Ram", 50000.0, "Developer"), " Ram");
+        personMap.put(new Person(1, "Rama", 50000.0, "Developer"), "Rama");
+        personMap.put(new Person(1, "Ram", 50000.0, "Developer"), "Update Ram");
+        personMap.put(new Person(3, "Chanakya", 345, "Dev"), "Diff");
+        personMap.forEach((key, value) -> {
+            System.out.println("Key: " + key + " - Value: " + value);
+        });
     }
 }
 ```
