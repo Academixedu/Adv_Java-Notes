@@ -35,7 +35,7 @@ The List interface is a part of the Java Collections Framework and extends the C
 
 The List interface in Java has three primary and commonly used subclasses (or implementations), which are ArrayList, LinkedList, and Vector. Each of these subclasses provides different features and performance characteristics suited to various use cases.
 
-<h3 style="color:red">ArrayList</h3>
+<h3 style="color:red;">ArrayList</h3>
 ArrayList is one of the most widely used classes in the Java Collections Framework. It is a resizable array implementation of the List interface, providing the ability to dynamically grow and shrink as elements are added or removed. Unlike standard arrays, which have a fixed size, an ArrayList can automatically adjust its capacity, making it a flexible and powerful tool for handling collections of objects.
 
 **Features**  
