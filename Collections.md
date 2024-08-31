@@ -7,6 +7,7 @@ such as searching, sorting, insertion, manipulation, and deletion.
 provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, 
 Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
 
-Collection Flow-Chart in Java
+- Collection Flow-Chart in Java
+
 <img src="https://static.javatpoint.com/images/java-collection-hierarchy.png" alt="My Image" width="500" height="500">
 
