@@ -70,9 +70,6 @@ When the list size changes infrequently or when elements are mostly added at the
 
 > [Apple][Date  ][Banana][Cherry][  ][  ][  ][  ][  ][  ]  // Size = 4, Capacity = 10
 
-
----
-
 ---
 ### After Deleting
 
