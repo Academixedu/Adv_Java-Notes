@@ -48,3 +48,50 @@ ArrayList is one of the most widely used classes in the Java Collections Framewo
 **When to Use:**
 When you need to frequently retrieve elements by index.
 When the list size changes infrequently or when elements are mostly added at the end of the list.
+
+```java
+import java.util.ArrayList;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+   
+        ArrayList<String> fruits = new ArrayList<>();
+
+    
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        fruits.add("Date");
+
+
+        System.out.println("Fruits List: " + fruits);
+
+      
+        String firstFruit = fruits.get(0);
+        System.out.println("First fruit: " + firstFruit);
+
+       
+        fruits.set(1, "Blueberry");
+        System.out.println("Updated Fruits List: " + fruits);
+
+    
+        fruits.remove("Date");
+        System.out.println("After removing Date: " + fruits);
+
+ 
+        System.out.println("Iterating over the Fruits List:");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        boolean hasApple = fruits.contains("Apple");
+        System.out.println("Does the list contain Apple? " + hasApple);
+
+        int size = fruits.size();
+        System.out.println("Size of the Fruits List: " + size);
+
+        fruits.clear();
+        System.out.println("Fruits List after clearing: " + fruits);
+    }
+}
+```
