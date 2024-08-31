@@ -11,6 +11,19 @@ Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
 
 <img src="https://static.javatpoint.com/images/java-collection-hierarchy.png" alt="My Image" width="600" height="500">
 
+
+# Table of Contents
+
+- [ArrayList](#ArrayList)
+- [LinkedList](#LinkedList)
+- [Stack](#Stack)
+- [HashSet](#HashSet)
+- [LinkedHashSet](#LinkedHashSet)
+- [TreeSet](#TreeSet)
+- [HashMap](#HashMap)
+- [LinkedHashMap](#LinkedHashMap)
+- [TreeMap](#TreeMap)
+
 ## 1) List Interface 
 The List interface is a part of the Java Collections Framework and extends the Collection interface. It represents an ordered collection, also known as a sequence, and allows for precise control over where elements are inserted. Elements can be accessed by their integer index (position in the list) and searched for within the list.
 
@@ -35,6 +48,7 @@ The List interface is a part of the Java Collections Framework and extends the C
 
 The List interface in Java has three primary and commonly used subclasses (or implementations), which are ArrayList, LinkedList, and Vector. Each of these subclasses provides different features and performance characteristics suited to various use cases.
 
+##ArrayList
 <h3>🟢ArrayList</h3>
 ArrayList is one of the most widely used classes in the Java Collections Framework. It is a resizable array implementation of the List interface, providing the ability to dynamically grow and shrink as elements are added or removed. Unlike standard arrays, which have a fixed size, an ArrayList can automatically adjust its capacity, making it a flexible and powerful tool for handling collections of objects.
 
@@ -130,6 +144,7 @@ public class ArrayListExample {
 }
 
 ```
+## LinkedList
 <h3>🟢LinkedList</h3>
 `LinkedList` is another important class in the Java Collections Framework. It implements the List interface as a doubly linked list, which allows for efficient insertion and deletion of elements. Unlike `ArrayList`, which is backed by a resizable array, `LinkedList` uses nodes to store data, making it suitable for scenarios where frequent modifications to the list are necessary.
 
@@ -221,6 +236,7 @@ public class LinkedListExample {
 }
 
 ```
+## Stack
 <h3>🟢 Stack</h3> 
 `Stack` is a class in the Java Collections Framework that represents a last-in, first-out (LIFO) data structure.
 It allows for storing and managing a collection of elements, where the most recently added element is the first to be removed. Stacks are useful for scenarios that require tracking previous states or implementing function call management.
@@ -380,7 +396,8 @@ Does not maintain the order of elements.
 - **TreeSet:**Implements the Set interface using a red-black tree.
 Maintains elements in a sorted order.
 Provides logarithmic time performance for the basic operations (add, remove, contains).
-
+---
+## HashSet
 <h3>🟢HashSet</h3>
 HashSet is part of the Java Collections Framework and implements the Set interface.
 It represents a collection that does not allow duplicate elements and does not maintain any particular order.
@@ -662,7 +679,7 @@ public class HashSet1 {
 }
 
 ```
-
+## LinkedHashSet
 <h3>🟢LinkedHashSet</h3> 
 `LinkedHashSet` is part of the Java Collections Framework and implements the Set interface. It represents a collection that does not allow duplicate elements and maintains a predictable iteration order based on the order of insertion.
 
@@ -928,6 +945,7 @@ public class LinkedHashSet1 {
 }
 
 ```
+## TreeSet
 <h3>🟢TreeSet</h3> 
 `TreeSet` is part of the Java Collections Framework and implements the `NavigableSet` interface, which extends the `SortedSet` interface. It represents a collection that does not allow duplicate elements and maintains a sorted order of its elements.
 
@@ -1272,7 +1290,8 @@ The Map interface is a part of the Java Collections Framework and represents a c
 **LinkedHashMap:** Extends HashMap and maintains a linked list of the entries to preserve the insertion order. Provides predictable iteration order.
 
 TreeMap: Implements the Map interface using a red-black tree. Maintains the keys in a sorted order. Provides logarithmic time performance for basic operations (put, remove, contains).
-
+---
+## HashMap
 <h3>🟢 HashMap</h3>
 HashMap is part of the Java Collections Framework and implements the Map interface. It represents a collection of key-value pairs where each key is unique. The HashMap allows for efficient retrieval and manipulation of data based on keys.
 
@@ -1355,6 +1374,7 @@ public class HahsMapExp {
     }
 }
 ```
+## LinkedHashMap
 <h3>🟢 LinkedHashMap</h3> 
 
 LinkedHashMap is part of the Java Collections Framework and extends the HashMap class. It maintains a doubly-linked list running through all of its entries, preserving the insertion order of the elements. LinkedHashMap represents a collection of key-value pairs where each key is unique and provides predictable iteration order.
@@ -1446,6 +1466,7 @@ public class HahsMapExp {
     }
 }
 ```
+## TreeMap
 <h3>🟢 TreeMap</h3>
 TreeMap is part of the Java Collections Framework and implements the Map interface. It represents a collection of key-value pairs where each key is unique. The primary feature of TreeMap is that it stores the keys in a sorted order, either according to their natural order or by a custom comparator provided at map creation.
 
@@ -1491,3 +1512,69 @@ TreeMap is part of the Java Collections Framework and implements the Map interfa
 - **SortedMap<K,V> headMap(K toKey):** Returns a view of the portion of this map whose keys are strictly less than toKey.
 
 - **SortedMap<K,V> tailMap(K fromKey):** Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
+---
+```java
+import java.util.TreeMap;
+import java.util.Map;
+
+public class TreeMapExample {
+    public static void main(String[] args) {
+        // Creating a TreeMap to store Integer keys and String values
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+
+        // Adding key-value pairs to the TreeMap
+        treeMap.put(3, "Apple");
+        treeMap.put(1, "Banana");
+        treeMap.put(4, "Cherry");
+        treeMap.put(2, "Date");
+
+        // Iterating through the TreeMap
+        System.out.println("TreeMap elements:");
+        for (Map.Entry<Integer, String> entry : treeMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+
+        // Accessing a specific value
+        String value = treeMap.get(2);
+        System.out.println("\nValue associated with key 2: " + value);
+
+        // Removing an entry
+        treeMap.remove(4);
+        System.out.println("\nTreeMap after removing key 4:");
+        for (Map.Entry<Integer, String> entry : treeMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+
+        // Getting the first and last entry
+        System.out.println("\nFirst Entry: " + treeMap.firstEntry());
+        System.out.println("Last Entry: " + treeMap.lastEntry());
+    }
+}
+```
+---
+### **Person Class Implementation**
+You Should do the same process as you done in Tree Set
+Loading Person Class Objects in Tree Map
+
+```java
+
+
+import java.util.TreeMap;
+
+
+public class TreeMapExp {
+    public static void main(String[] args) {
+        
+        TreeMap<Person, String> personMap = new  TreeMap<>();
+
+        
+        personMap.put( new Person(1, "Alice", 50000.0, "Developer"), " Alice");
+        personMap.put(new Person(1, "Alicia", 50000.0, "Developer"), "Alicia");
+        personMap.put(new Person(1, "Alice", 50000.0, "Developer"), "Update Alice");
+        personMap.put(new Person(3, "Chanakya", 345, "Dev"), "Diff");
+        personMap.forEach((key, value) -> {
+            System.out.println("Key: " + key + " - Value: " + value);
+        });
+    }
+}
+```
