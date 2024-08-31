@@ -15,4 +15,4 @@ different parameters) and method overriding (a subclass redefining a method from
 
 **Abstraction:** The concept of hiding complex implementation details while exposing only the essential features of an object. This can be achieved through abstract classes and interfaces.
 
-<img src="https://static.javatpoint.com/images/java-oops.png" alt="My Image" width="800" height="500">
+<img src="C:\Users\Chanakya\Downloads\java-oops.jpg" alt="My Image" width="800" height="500">
