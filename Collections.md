@@ -1,4 +1,4 @@
-### Collections in Java 
+# Collections in Java 
 - The Collection in Java is a framework that provides an architecture to store 
 and manipulate the group of objects,Java Collections can achieve all the operations that you perform on a data 
 such as searching, sorting, insertion, manipulation, and deletion. 
@@ -32,4 +32,5 @@ The List interface is a part of the Java Collections Framework and extends the C
 - int indexOf(Object o): Returns the index of the first occurrence of the specified element, or -1 if the list does not contain the element.
 - int lastIndexOf(Object o): Returns the index of the last occurrence of the specified element, or -1 if the list does not contain the element.
 - List<E> subList(int fromIndex, int toIndex): Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
+
 
