@@ -19,7 +19,7 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Creating Thread](#Create)
 - [Thread Functions](#Functions)
 - [synchronization](#synchronize)
-- [Inter-Thread-Communication](Inter-Thread-Communication)
+- [Inter-Thread-Communication](Inter_Thread_Communication)
 - [Yield&Join](#Yield-Join)
 - [Deadlock](#DeadLock)
 
@@ -335,7 +335,7 @@ public class Synchronisation {
 }
 ```
 ---
-## Inter-Thread-Communication
+## Inter_Thread_Communication
 
 Inter-thread communication in Java allows threads to communicate with each other, enabling coordination and synchronization between their execution. The primary methods used for inter-thread communication are wait(), notify(), and notifyAll(), which are defined in the Object class.
 
