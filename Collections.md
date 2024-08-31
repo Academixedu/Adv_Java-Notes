@@ -511,6 +511,134 @@ public class HashSetExample {
     }
 }
 ```
+### **Person Class(User Class)**
+Overrriding HashCode() and Equals() Method to our Class
+
+```java
+public class Person{
+    private int pid;
+    private String name;
+    private double sal;
+    private String desg;
+    public int getPid() {
+        return pid;
+    }
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getSal() {
+        return sal;
+    }
+    public void setSal(double sal) {
+        this.sal = sal;
+    }
+    public String getDesg() {
+        return desg;
+    }
+    public void setDesg(String desg) {
+        this.desg = desg;
+    }
+    public Person(int pid, String name, double sal, String desg) {
+        this.pid = pid;
+        this.name = name;
+        this.sal = sal;
+        this.desg = desg;
+    }
+    public Person(){
+
+    }
+    @Override
+    public String toString() {
+        return "Person [pid=" + pid + ", name=" + name + ", sal=" + sal + ", desg=" + desg + "]";
+    }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + pid;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(sal);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((desg == null) ? 0 : desg.hashCode());
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Person other = (Person) obj;
+        if (pid != other.pid)
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        if (Double.doubleToLongBits(sal) != Double.doubleToLongBits(other.sal))
+            return false;
+        if (desg == null) {
+            if (other.desg != null)
+                return false;
+        } else if (!desg.equals(other.desg))
+            return false;
+        return true;
+    }
+   
+    
+}
+```
+### **HashCode() and Equals()**
+```java
+@Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + pid;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        long temp;
+        temp = Double.doubleToLongBits(sal);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + ((desg == null) ? 0 : desg.hashCode());
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Person other = (Person) obj;
+        if (pid != other.pid)
+            return false;
+        if (name == null) {
+            if (other.name != null)
+                return false;
+        } else if (!name.equals(other.name))
+            return false;
+        if (Double.doubleToLongBits(sal) != Double.doubleToLongBits(other.sal))
+            return false;
+        if (desg == null) {
+            if (other.desg != null)
+                return false;
+        } else if (!desg.equals(other.desg))
+            return false;
+        return true;
+    }
+```
+
 
 <h3>🟢LinkedHashSet</h3> 
 `LinkedHashSet` is part of the Java Collections Framework and implements the Set interface. It represents a collection that does not allow duplicate elements and maintains a predictable iteration order based on the order of insertion.
@@ -814,6 +942,8 @@ public class TreeSetExample {
     }
 }
 ```
+--- 
+
 ### **User Approach in Tree Set**
 
 **Person Class**
