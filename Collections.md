@@ -82,45 +82,49 @@ import java.util.ArrayList;
 
 public class ArrayListExample {
     public static void main(String[] args) {
-   
+        // Initialize ArrayList
         ArrayList<String> fruits = new ArrayList<>();
-
-    
         fruits.add("Apple");
         fruits.add("Banana");
         fruits.add("Cherry");
-        fruits.add("Date");
+        
+        System.out.println("Initial State of Fruits List:");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size() + ", Capacity = 10 (initially)");
 
+        // After Insertion
+        fruits.add(1, "Date"); // Inserting "Date" at index 1
+        System.out.println("\nAfter Insertion (Inserting 'Date' at index 1):");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size() + ", Capacity = 10 (no resize needed)");
 
-        System.out.println("Fruits List: " + fruits);
+        // After Deleting
+        fruits.remove("Banana"); // Deleting "Banana"
+        System.out.println("\nAfter Deleting (Removing 'Banana'):");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size() + ", Capacity = 10 (no resize needed)");
 
-      
+        // Additional Operations
         String firstFruit = fruits.get(0);
-        System.out.println("First fruit: " + firstFruit);
+        System.out.println("\nFirst fruit: " + firstFruit);
 
-       
+        // Updating a fruit
         fruits.set(1, "Blueberry");
-        System.out.println("Updated Fruits List: " + fruits);
+        System.out.println("Updated Fruits List after replacing 'Date' with 'Blueberry': " + fruits);
 
-    
-        fruits.remove("Date");
-        System.out.println("After removing Date: " + fruits);
-
- 
-        System.out.println("Iterating over the Fruits List:");
-        for (String fruit : fruits) {
-            System.out.println(fruit);
-        }
-
+        // Check if the list contains "Apple"
         boolean hasApple = fruits.contains("Apple");
         System.out.println("Does the list contain Apple? " + hasApple);
 
+        // Size of the list
         int size = fruits.size();
         System.out.println("Size of the Fruits List: " + size);
 
+        // Clear the list
         fruits.clear();
         System.out.println("Fruits List after clearing: " + fruits);
     }
 }
+
 ```
 
