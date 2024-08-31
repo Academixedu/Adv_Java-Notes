@@ -34,7 +34,11 @@ The List interface is a part of the Java Collections Framework and extends the C
 - List<E> subList(int fromIndex, int toIndex): Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.
 
 The List interface in Java has three primary and commonly used subclasses (or implementations), which are ArrayList, LinkedList, and Vector. Each of these subclasses provides different features and performance characteristics suited to various use cases.
-<img src="" alt="My Image" width="500" height="500">
 
 ### **1) ArrayList**
+- **Resizable Array:** Automatically increases its size when more elements are added.
+- **Efficient Random Access:** Ideal for scenarios where you need to frequently access elements by their index.
+- **Non-Synchronized:** Not thread-safe unless externally synchronized.
+- **Maintains Insertion Order:** Elements are stored in the order they were added.
+- **Allows Duplicates:** You can add duplicate elements to the list. 
 
