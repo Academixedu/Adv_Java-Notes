@@ -20,7 +20,7 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Thread Functions](#Functions)
 - [synchronization](#synchronize)
 - [Inter-Thread-Communication](Inter-Thread-Communication)
-- [Yield & Join](#YnJ)
+- [Yield&Join](#Yield&Join)
 - [Deadlock](#DeadLock)
 
 ## LifeCycle 
@@ -241,7 +241,7 @@ public static void m1(){
 - **Usage:** Can be used to retrieve the thread's name.
 > String name = t.getName(); // Get the thread's name
 
-## Synchronization in Threads
+## synchronize
 
 Synchronization in Java is a mechanism that ensures that two or more concurrent threads do not simultaneously execute specific sections of code, preventing data inconsistency and ensuring thread safety. It is essential in multi-threaded programming when multiple threads access shared resources.
 
