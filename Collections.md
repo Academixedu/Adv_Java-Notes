@@ -222,11 +222,12 @@ public class LinkedListExample {
 
 ```
 <h3>🟢 Stack</h3> 
-`Stack` is a class in the Java Collections Framework that represents a last-in, first-out (LIFO) data structure. It allows for storing and managing a collection of elements, where the most recently added element is the first to be removed. Stacks are useful for scenarios that require tracking previous states or implementing function call management.
+`Stack` is a class in the Java Collections Framework that represents a last-in, first-out (LIFO) data structure.
+It allows for storing and managing a collection of elements, where the most recently added element is the first to be removed. Stacks are useful for scenarios that require tracking previous states or implementing function call management.
 
 
 
-**Features**
+### **Features**
 
 - LIFO Order: The last element added to the stack is the first to be removed.
 
@@ -239,7 +240,7 @@ public class LinkedListExample {
 - Allows Duplicates: You can add duplicate elements to the stack.
 
 
-**When to Use:**
+### **When to Use:**
 
 - When your application requires tracking of function calls or previous states.
 
