@@ -5,4 +5,5 @@ such as searching, sorting, insertion, manipulation, and deletion.
 
 - Java Collection means a single unit of objects. Java Collection framework 
 provides many interfaces (Set, List, Queue, Deque) and classes (ArrayList, 
-Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet). 
+Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+![Alt text](https://static.javatpoint.com/images/java-collection-hierarchy.png)
