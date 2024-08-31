@@ -137,15 +137,15 @@ public class ArrayListExample {
 
 **Features**
 
-**Dynamic Size:** Automatically adjusts its size with the addition or removal of elements.
+**Dynamic Size:**  Automatically adjusts its size with the addition or removal of elements.
 
-**Efficient Insertions/Deletions:** Insertion and deletion operations are fast (O(1)) when you have a reference to the node.
+**Efficient Insertions/Deletions:**  Insertion and deletion operations are fast (O(1)) when you have a reference to the node.
 
-**Non-Synchronized:** Not thread-safe unless externally synchronized.**
+**Non-Synchronized:**  Not thread-safe unless externally synchronized.
 
-Maintains Insertion Order:** Elements are stored in the order they were added.
+**Maintains Insertion Order:**  Elements are stored in the order they were added.
 
-**Allows Duplicates:** You can add duplicate elements to the list.
+**Allows Duplicates:**  You can add duplicate elements to the list.
 
 **When to Use:**
 When your application requires frequent insertions and deletions of elements in the middle of the list.
@@ -176,11 +176,13 @@ Inserting an Element
 
 
 ---
----
-After Deleting
-[Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [Null]
 
-[Apple] -> [Date] -> [Cherry] -> [Null] // Size = 3
+---
+ Deleting
+### Step 1
+> [Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [Null]
+### Step 2
+> [Apple] -> [Mango] -> [Cherry] -> [Null] // Size = 4
 ---
 
 
