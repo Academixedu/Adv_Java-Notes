@@ -47,7 +47,7 @@ A thread enters the Dead state once its execution is complete, either by returni
 ---
 ## Create
 
-### Creating a Thread by Extending the Thread Class in Java
+### 1) Creating a Thread by Extending the Thread Class in Java
 
 In Java, one way to create a new thread is by extending the Thread class. This method involves creating a subclass of Thread and overriding its run() method. The run() method contains the code that will be executed when the thread is started.
 
@@ -58,3 +58,5 @@ In Java, one way to create a new thread is by extending the Thread class. This m
 - **Create an Instance of the Subclass:**    After defining your thread class, you create an instance of it.
 
 - **Start the Thread:**   Call the start() method on the instance to begin the execution of the thread. This causes the run() method to be executed in a new thread.
+
+Example Code to Create a Thread using "extends" keyword
