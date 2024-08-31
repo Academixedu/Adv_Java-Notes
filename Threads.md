@@ -23,7 +23,25 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Yield & Join](#YnJ)
 - [Deadlock](#DeadLock)
 
-## LifeCycle
+## LifeCycle 
 In Java, a thread goes through several states during its life cycle. These states represent the various stages a thread can be in, from creation to termination. Understanding the thread life cycle is crucial for effective multithreading programming, as it helps in managing and controlling thread execution.
 
 <img src="https://javatrainingschool.com/wp-content/uploads/2021/09/image-13-1024x477.png" alt="My Image" width="800" height="500">
+
+
+### **New:**
+The thread is created but not yet started. In this state, the thread object is instantiated, but the start() method has not been called yet.
+
+### **Runnable:**
+Once the start() method is called, the thread enters the Runnable state. In this state, the thread is ready to run and is waiting for CPU time to execute. However, it may not be running immediately depending on the availability of the CPU.
+
+### **Running:**
+When the thread scheduler selects the thread from the Runnable state, it enters the Running state. In this state, the thread is actively executing its task.
+
+### **Wait()/Blocked/Sleep:**
+During execution, a thread can enter this state if it is waiting for another thread to perform a specific action, waiting for I/O operations to complete, or simply put to sleep using sleep() or wait(). The thread remains in this state until the condition that caused it to wait is met or until the specified time has elapsed.
+
+### **Dead:**
+A thread enters the Dead state once its execution is complete, either by returning from the run() method or by being terminated. Once a thread is in this state, it cannot be restarted.
+
+
