@@ -1355,3 +1355,26 @@ public class HahsMapExp {
     }
 }
 ```
+<h3>🟢 LinkedHashMap</h3> 
+
+LinkedHashMap is part of the Java Collections Framework and extends the HashMap class. It maintains a doubly-linked list running through all of its entries, preserving the insertion order of the elements. LinkedHashMap represents a collection of key-value pairs where each key is unique and provides predictable iteration order.
+
+### **Key Features of LinkedHashMap**
+- **Key-Value Pair:** Stores data in key-value pairs, allowing efficient access to values based on keys.
+
+- **No Duplicate Keys:** Each key must be unique. If a duplicate key is added, the existing value is replaced with the new value.
+
+- **Insertion Order:** Maintains the order of insertion. Elements are returned in the order they were inserted into the map.
+
+- **Access Order (Optional):** Can be configured to maintain the order of access instead of insertion order. When access order is enabled, the most recently accessed elements are moved to the end of the list.
+
+- **Performance:** Provides constant-time performance for basic operations like put, get, and remove, on average, similar to HashMap, but with a slight overhead due to the linked list.
+
+### **Internal Mechanism of LinkedHashMap**
+- **Hashing:** Similar to HashMap, LinkedHashMap uses a hash table to store key-value pairs. The position of each key is determined by its hash code.
+
+- **Doubly-Linked List:** In addition to the hash table, LinkedHashMap maintains a doubly-linked list that links all of its entries in the order of insertion (or access, if configured). This list allows for predictable iteration order.
+
+- **Buckets:** The hash table is divided into buckets, with each bucket capable of holding multiple key-value pairs (in case of hash collisions), ensuring efficient storage and retrieval.
+
+- **Load Factor:** Like HashMap, LinkedHashMap also uses a load factor to determine when to increase the size of the map. The default load factor is 0.75, offering a good balance between time and space cost.
