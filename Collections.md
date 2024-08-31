@@ -290,3 +290,46 @@ Stack remains unchanged: [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null]
 
 ---
 
+``` java
+import java.util.Stack;
+
+public class StackExample {
+    public static void main(String[] args) {
+        // Initialize Stack
+        Stack<String> fruits = new Stack<>();
+        fruits.push("Apple");
+        fruits.push("Banana");
+        fruits.push("Cherry");
+        
+        System.out.println("Initial State of Fruits Stack:");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+
+        // Pushing an Element
+        fruits.push("Mango");
+        System.out.println("\nAfter Pushing (Adding 'Mango'):");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+
+        // Popping an Element
+        String poppedFruit = fruits.pop(); // Removing the top element
+        System.out.println("\nAfter Popping (Removed: " + poppedFruit + "):");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+
+        // Peeking at the Top Element
+        String topFruit = fruits.peek(); // Get the top element without removing it
+        System.out.println("\nTop Element (After Peek): " + topFruit);
+        System.out.println("Stack remains unchanged: " + fruits);
+        
+        // Checking if the stack is empty
+        boolean isEmpty = fruits.isEmpty();
+        System.out.println("\nIs the stack empty? " + isEmpty);
+        
+        // Clearing the stack
+        fruits.clear();
+        System.out.println("\nFruits Stack after clearing: " + fruits);
+        System.out.println("Size = " + fruits.size());
+    }
+}
+```
