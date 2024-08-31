@@ -19,7 +19,7 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Creating Thread](#Create)
 - [Thread Functions](#Functions)
 - [synchronization](#synchronize)
-- [Inter-Thread Communication in Java](Inter-Thread-Communication)
+- [Inter-Thread-Communication](Inter-Thread-Communication)
 - [Yield & Join](#YnJ)
 - [Deadlock](#DeadLock)
 
