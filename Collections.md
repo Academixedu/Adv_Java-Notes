@@ -537,7 +537,8 @@ Collision Handling:
 If the equals() method returns true for two objects, the LinkedHashSet will not add the new object since it considers it a duplicate.
 ---
 ### **Initial State of LinkedHashSet**
-LinkedHashSet: []
+
+- LinkedHashSet: [ ]
 ---
 ### **Adding an Element**
 - New Element: Mango
