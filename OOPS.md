@@ -377,7 +377,7 @@ public class Main {
 
 - **Definition:** In Java, multiple inheritance is not directly supported through classes to avoid ambiguity. However, it can be achieved using interfaces, where a class can implement multiple interfaces.
 
-```
+```java
 interface CanBark {
     void bark();
 }
