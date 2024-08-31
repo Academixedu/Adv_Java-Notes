@@ -96,3 +96,72 @@ Another way to create a thread in Java is by implementing the Runnable interface
 Start the Thread:
 
 **Call the start() method on the Thread object to begin the execution of the thread.**
+
+---
+
+```java
+public class Threads1 implements Runnable{
+
+    public void run(){
+        for(int i=0;i<4;i++){
+            try {
+                Thread.sleep(100);
+                System.out.println("Hello "+Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }    
+            
+                    }
+    }
+    public static void main(String[] args) {
+        Threads1 t1=new Threads1();
+        Thread t=new Thread(t1);
+        t.start();
+        t.interrupt();
+
+        Thread t2=new Thread(t1);
+        t2.start();
+
+        }
+}
+```
+--- 
+### 3)Creating a Thread Using an Anonymous Class in Java
+
+In Java, you can create a thread using an anonymous class, which provides a more concise way to define and start a thread without the need to create a separate class. An anonymous class is an unnamed implementation of an interface or extension of a class, defined and instantiated all at once.
+
+### **Steps and Procedure:**
+
+**Create an Anonymous Class Implementing Runnable:**
+- You can create an anonymous class that implements the Runnable interface and overrides the run() method directly where you need the thread.
+
+**Pass the Anonymous Class Instance to a Thread Object:**
+- Once the anonymous class is defined, pass it as an argument to a Thread object.
+Start the Thread:
+
+**Call the start() method on the Thread object to initiate the thread's execution.**
+---
+```java
+public class Anomous {
+public static void m1(){
+    for(int i=1;i<=3;i++){
+        System.out.println(Thread.currentThread().getName()+" : "+i);
+    }
+}
+    public static void main(String[] args) {
+        Thread t=new Thread(){
+            @Override
+            public void run(){
+                m1();
+            }
+        };t.start();
+
+        Thread t1=new Thread(){
+            public void run(){
+                m1();
+            }
+        };t1.start();
+    }
+}
+```
