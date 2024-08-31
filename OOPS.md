@@ -15,4 +15,37 @@ different parameters) and method overriding (a subclass redefining a method from
 
 **Abstraction:** The concept of hiding complex implementation details while exposing only the essential features of an object. This can be achieved through abstract classes and interfaces.
 
-<img src="https://drive.google.com/file/d/13N1y_mQFhBQF2pXZd6ciJTGrndmXeAQL/view?usp=sharing" alt="My Image" width="800" height="500">
+
+## **Classes and Objects**
+
+**1. Classes**
+- A class is a blueprint or template for creating objects. It defines a data type by bundling data (attributes) and methods (functions) that operate on that data.
+- Classes provide a way to structure code and represent real-world entities.
+- Example: In a Car class, you might define attributes like color and model, and methods like drive() and stop().
+
+**2. Objects**
+- An object is an instance of a class. It is created based on the class definition and represents a specific entity.
+- Objects encapsulate data and behavior, allowing them to manage their state and perform operations.
+- Example: Car myCar = new Car(); creates an object myCar of the Car class.
+
+**3. Attributes**
+- Attributes (or fields) are variables defined in a class that hold the state of an object.
+- They can have various access modifiers (private, protected, public) to control visibility and accessibility.
+- Example: In the Car class, attributes might include color, model, and year.
+
+**4. Methods**
+- Methods are functions defined in a class that describe the behaviors or actions an object can perform.
+- Methods can manipulate the object's attributes and may return values.
+- Example: Methods like start(), accelerate(), and brake() define what actions a Car object can perform.
+
+**5. Instantiation**
+- Instantiation is the process of creating an object from a class using the new keyword.
+- Example: Car myCar = new Car(); creates an object named myCar based on the Car class.
+
+**6. Access Modifiers**
+- Access modifiers control the visibility of classes, attributes, and methods.
+- public: Accessible from anywhere.
+- private: Accessible only within the class.
+- protected: Accessible within the class and subclasses.
+
+
