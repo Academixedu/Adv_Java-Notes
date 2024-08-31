@@ -1446,3 +1446,48 @@ public class HahsMapExp {
     }
 }
 ```
+<h3>🟢 TreeMap</h3>
+TreeMap is part of the Java Collections Framework and implements the Map interface. It represents a collection of key-value pairs where each key is unique. The primary feature of TreeMap is that it stores the keys in a sorted order, either according to their natural order or by a custom comparator provided at map creation.
+
+### **Key Features of TreeMap**
+
+- **Sorted Order:** The keys in a TreeMap are always stored in sorted order, either natural (e.g., alphabetical for strings, numerical for integers) or based on a custom comparator.
+
+- **No Duplicate Keys:** Each key in a TreeMap must be unique. If you attempt to add a duplicate key, the existing value associated with that key is replaced with the new value.
+
+- **NavigableMap Interface:** TreeMap implements the NavigableMap interface, which provides methods to navigate through the keys in the map (e.g., headMap, tailMap, subMap).
+
+- **Red-Black Tree:** Internally, TreeMap is implemented using a Red-Black tree, which guarantees that the basic operations (e.g., get, put, remove) have a time complexity of O(log n).
+
+- **Null Values:** TreeMap allows null values but does not permit null keys. Attempting to insert a null key will result in a NullPointerException.
+
+- **Dynamic Size:** The size of a TreeMap grows automatically as elements are added.
+
+- **Non-Synchronized:** TreeMap is not thread-safe by default. To make it thread-safe, it must be synchronized externally.
+
+### **Internal Mechanism of TreeMap**
+- **Red-Black Tree:** TreeMap uses a Red-Black tree to store its key-value pairs. This is a self-balancing binary search tree, ensuring that the tree remains balanced after every insertion and deletion, providing efficient data retrieval.
+
+- **Custom Sorting:** If you want to use a custom sorting order, you can provide a Comparator when creating the TreeMap. This allows you to control how the keys are sorted beyond their natural ordering.
+
+- **SubMaps:** TreeMap supports submap operations through methods like subMap(K fromKey, K toKey), which returns a portion of the map whose keys range from fromKey to toKey.
+
+### **Common Methods in TreeMap**
+
+- **V put(K key, V value):** Associates the specified value with the specified key in the map. If the key is already present, the existing value is replaced.
+
+- **V get(Object key):** Returns the value associated with the specified key, or null if the key is not found.
+
+- **V remove(Object key):** Removes the key-value pair associated with the specified key from the map.
+
+- **Set<K> keySet():** Returns a Set view of the keys contained in the map, in ascending order.
+
+- **NavigableSet<K> descendingKeySet():** Returns a NavigableSet view of the keys contained in the map, in descending order.
+
+- **Map.Entry<K,V> firstEntry():** Returns the first (lowest) entry in the map.
+
+- **Map.Entry<K,V> lastEntry():** Returns the last (highest) entry in the map.
+
+- **SortedMap<K,V> headMap(K toKey):** Returns a view of the portion of this map whose keys are strictly less than toKey.
+
+- **SortedMap<K,V> tailMap(K fromKey):** Returns a view of the portion of this map whose keys are greater than or equal to fromKey.
