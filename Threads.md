@@ -1,1 +1,2 @@
-
+# Threads in Java
+A Thread in Java is the smallest unit of execution within a process. It enables parallelism by allowing multiple sequences of operations to run concurrently within a single program. This ability to run multiple parts of a program simultaneously is crucial for creating responsive and efficient applications, particularly in environments where multiple tasks need to be performed at the same time.
