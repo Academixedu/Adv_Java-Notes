@@ -430,3 +430,38 @@ public class Bank {
 ### **Key Differences**
 - **Yield:** Suggests that the thread yield its execution; does not wait for completion.
 - **Join:** Waits for the specified thread to finish before continuing execution.
+
+Example of Yield
+```java
+class YieldExample implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " - Count: " + i);
+            // Yielding control to allow other threads to execute
+            Thread.yield();
+        }
+    }
+
+    public static void main(String[] args) {
+        YieldExample example = new YieldExample();
+
+        Thread thread1 = new Thread(example);
+        thread1.setName("Thread 1");
+        thread1.setPriority(5);
+
+        Thread thread2 = new Thread(example);
+        thread2.setName("Thread 2");
+        thread2.setPriority(5);
+
+        Thread thread3 = new Thread(example);
+        thread3.setName("Thread 3");
+        thread3.setPriority(7); // Higher priority
+
+        // Start all threads
+        thread1.start();
+        thread2.start();
+        thread3.start();
+    }
+}
+```
