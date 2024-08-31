@@ -553,14 +553,14 @@ LinkedHashSet: []
 
 **Step 2 LinkedHashSet after additions:**
 > [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
-
+---
 ### **Adding a Duplicate Element**
 **Step 1** Attempting to add: Apple (already exists) The hashCode() for Apple is computed, and it points to the same bucket as the existing Apple.
 
 **Step 2** The equals() method is called to check for duplicates. Since it finds an existing Apple, the set remains unchanged:
 
 > [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
-
+---
 ### **Removing an Element**
 **Step 1 Removing:** 
 - Banana The hashCode() of Banana is calculated, leading to its bucket.
@@ -578,7 +578,9 @@ LinkedHashSet: []
 - The equals() method is called, confirming that Apple exists: Does the set contain Apple? Yes
 ---
 ### **Clearing the Set**
+
 **Step 1**
 - Clear all elements from the LinkedHashSet.
+
 **Step 2**
 - LinkedHashSet after clearing: [] (Empty Set) // Size = 0
