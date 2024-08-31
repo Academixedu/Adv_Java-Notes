@@ -585,3 +585,45 @@ If the equals() method returns true for two objects, the LinkedHashSet will not 
 
 **Step 2**
 - LinkedHashSet after clearing: [] (Empty Set) // Size = 0
+---
+
+```java
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetExample {
+    public static void main(String[] args) {
+        // Creating a LinkedHashSet
+        LinkedHashSet<String> fruits = new LinkedHashSet<>();
+
+        // Initial State of LinkedHashSet
+        System.out.println("LinkedHashSet: " + fruits); // Output: []
+
+        // Adding an element
+        fruits.add("Mango");
+        System.out.println("After adding Mango: " + fruits); // Output: [Mango]
+
+        // Adding more elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        System.out.println("After adding Apple, Banana, Cherry: " + fruits); // Output: [Mango, Apple, Banana, Cherry]
+
+        // Attempting to add a duplicate element
+        boolean isAdded = fruits.add("Apple");
+        System.out.println("Attempt to add duplicate Apple: " + isAdded); // Output: false
+        System.out.println("LinkedHashSet remains unchanged: " + fruits); // Output: [Mango, Apple, Banana, Cherry]
+
+        // Removing an element
+        fruits.remove("Banana");
+        System.out.println("After removing Banana: " + fruits); // Output: [Mango, Apple, Cherry]
+
+        // Checking for containment
+        boolean containsApple = fruits.contains("Apple");
+        System.out.println("Does the set contain Apple? " + containsApple); // Output: true
+
+        // Clearing the set
+        fruits.clear();
+        System.out.println("After clearing the set: " + fruits); // Output: []
+    }
+}
+```
