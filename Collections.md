@@ -333,7 +333,7 @@ public class StackExample {
     }
 }
 ```
-2) Set Interface
+## **2) Set Interface**
 The Set interface is a part of the Java Collections Framework and extends the Collection interface. It represents a collection that does not allow duplicate elements. Sets are used to model mathematical set abstractions and provide a means to store unique elements.
 
 ### **Key Characteristics:**
