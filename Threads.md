@@ -44,4 +44,17 @@ During execution, a thread can enter this state if it is waiting for another thr
 ### **Dead:**
 A thread enters the Dead state once its execution is complete, either by returning from the run() method or by being terminated. Once a thread is in this state, it cannot be restarted.
 
+---
+## Create
 
+### Creating a Thread by Extending the Thread Class in Java
+
+In Java, one way to create a new thread is by extending the Thread class. This method involves creating a subclass of Thread and overriding its run() method. The run() method contains the code that will be executed when the thread is started.
+
+- **Create a Class that Extends Thread:**   To create a new thread, you define a class that extends the Thread class and override the run() method. The code inside the run() method is what will be executed by the new thread.
+
+- **Override the run() Method:**   The run() method contains the code that represents the task or job that the thread will perform when it's running.
+
+- **Create an Instance of the Subclass:**    After defining your thread class, you create an instance of it.
+
+- **Start the Thread:**   Call the start() method on the instance to begin the execution of the thread. This causes the run() method to be executed in a new thread.
