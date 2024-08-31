@@ -450,11 +450,11 @@ The hashCode() of Banana is calculated, leading to its bucket.
 
 ### **Checking for Containment**
 **Step 1**
-Checking if HashSet contains: Apple
-The hashCode() of Apple is calculated, and it points to the correct bucket.
+- Checking if HashSet contains: Apple
+- The hashCode() of Apple is calculated, and it points to the correct bucket.
 
 **Step 2**
-The equals() method is called, confirming that Apple exists:
+- The equals() method is called, confirming that Apple exists:
 Does the set contain Apple? Yes
 ---
 
@@ -464,5 +464,5 @@ Does the set contain Apple? Yes
 - Clear all elements from the HashSet.
 
 **Step 2**
-HashSet after clearing:
+- HashSet after clearing:
 [] (Empty Set) // Size = 0
