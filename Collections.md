@@ -63,6 +63,7 @@ When the list size changes infrequently or when elements are mostly added at the
 
 > [Apple][Banana][Cherry][  ][  ][  ][  ][  ][  ][  ]  // Size = 3, Capacity = 10
 
+---
 
 ### After Insertion
 
@@ -70,7 +71,7 @@ When the list size changes infrequently or when elements are mostly added at the
 
 > [Apple][Date  ][Banana][Cherry][  ][  ][  ][  ][  ][  ]  // Size = 4, Capacity = 10
 
-
+---
 ### After Deleting
 
 > [ 0 ] [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ]
@@ -158,7 +159,6 @@ public class ArrayListExample {
 
 ---
 
----
 Inserting an Element
 ### Step 1
 > [NewNode]
@@ -170,9 +170,6 @@ Inserting an Element
 
 ### Step 3
 > [Apple] -> [Mango] -> [Date] -> [Banana] -> [Cherry] -> [Null] // Size = 5
-
-
----
 
 ---
  Deleting
