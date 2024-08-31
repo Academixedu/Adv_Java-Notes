@@ -185,4 +185,46 @@ Inserting an Element
 > [Apple] -> [Mango] -> [Cherry] -> [Null] // Size = 4
 ---
 
+```java
+import java.util.LinkedList;
+
+public class LinkedListExample {
+    public static void main(String[] args) {
+        // Initialize LinkedList
+        LinkedList<String> fruits = new LinkedList<>();
+        fruits.add("Apple");
+        fruits.add("Date");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        
+        // Display initial state
+        System.out.println("Initial State of LinkedList:");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+
+        // Inserting an Element (Mango)
+        System.out.println("\nInserting an Element (Mango):");
+
+        // Step 1: Create a new node (Mango)
+        String newFruit = "Mango";
+        // Step 2: Inserting Mango at index 1
+        fruits.add(1, newFruit);
+        // Step 3: Display updated LinkedList
+        System.out.println("After Insertion:");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+
+        // Deleting an Element (Date)
+        System.out.println("\nDeleting an Element (Date):");
+        
+        // Step 1: Remove "Date" from the LinkedList
+        fruits.remove("Date");
+        // Step 2: Display updated LinkedList after deletion
+        System.out.println("After Deletion:");
+        System.out.println(fruits);
+        System.out.println("Size = " + fruits.size());
+    }
+}
+
+```
 
