@@ -627,3 +627,153 @@ public class LinkedHashSetExample {
     }
 }
 ```
+<h3>🟢TreeSet</h3> 
+`TreeSet` is part of the Java Collections Framework and implements the `NavigableSet` interface, which extends the `SortedSet` interface. It represents a collection that does not allow duplicate elements and maintains a sorted order of its elements.
+
+### **Key Features of TreeSet**
+**Sorted Order:** Automatically sorts elements in their natural ordering or according to a specified comparator.
+**Dynamic Size:** Adjusts its size automatically as elements are added or removed.
+**Non-Synchronized:** Not thread-safe unless externally synchronized.
+**No Duplicates:** Automatically prevents the addition of duplicate elements.
+
+### **Internal Mechanism of TreeSet**
+
+**Tree Structure:**
+- TreeSet is implemented using a red-black tree, a self-balancing binary search tree.
+Each node in the tree contains a value, and nodes are arranged in a way that allows for efficient searching, inserting, and deleting.
+Sorted Storage:
+
+- Elements are stored in sorted order based on their natural ordering or by a comparator provided at set creation.
+The tree structure allows for O(log n) time complexity for basic operations like add, remove, and contains.
+No Duplicates:
+
+- When an object is added, TreeSet uses the compareTo() method (or the comparator's compare() method) to check for duplicates.
+If an attempt is made to add a duplicate, the set remains unchanged.
+
+### **Comparable and Comparator in TreeSet**
+
+### **Comparable Interface:**
+
+- The Comparable interface is used to define the natural ordering of the objects.
+Classes that implement this interface must override the compareTo(T o) method, which is used for comparison in TreeSet.
+
+```java
+class Fruit implements Comparable<Fruit> {
+    String name;
+
+    Fruit(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public int compareTo(Fruit other) {
+        return this.name.compareTo(other.name); // Sorts fruits alphabetically
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
+
+TreeSet<Fruit> fruits = new TreeSet<>();
+fruits.add(new Fruit("Mango"));
+fruits.add(new Fruit("Apple"));
+fruits.add(new Fruit("Banana"));
+System.out.println(fruits); // Output: [Apple, Banana, Mango]
+```
+### **Comparator Interface:**
+
+- The Comparator interface is used to define custom ordering for objects that may not have a natural ordering or when multiple sorting strategies are needed.
+Implementing a Comparator allows for sorting based on different criteria.
+
+```java
+import java.util.Comparator;
+
+class Fruit {
+    String name;
+    int price;
+
+    Fruit(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + price + ")";
+    }
+}
+
+// Comparator to sort fruits by price
+Comparator<Fruit> byPrice = new Comparator<Fruit>() {
+    @Override
+    public int compare(Fruit f1, Fruit f2) {
+        return Integer.compare(f1.price, f2.price); // Sorts fruits by price
+    }
+};
+
+TreeSet<Fruit> fruitsByPrice = new TreeSet<>(byPrice);
+fruitsByPrice.add(new Fruit("Mango", 60));
+fruitsByPrice.add(new Fruit("Apple", 30));
+fruitsByPrice.add(new Fruit("Banana", 40));
+System.out.println(fruitsByPrice); // Output: [Apple (30), Banana (40), Mango (60)]
+```
+
+### **Initial State of TreeSet**
+- TreeSet: []
+---
+### **Adding an Element**
+New Element: Mango
+The element is added, and the TreeSet automatically maintains the sorted order.
+
+### **TreeSet after addition:**
+> [Mango] // Size = 1
+
+- Adding More Elements
+
+**Step 1**
+- Adding: Apple, Banana, Cherry
+- Each element is added, and the TreeSet adjusts to keep elements sorted.
+
+**Step 2**
+- TreeSet after additions:
+- [Apple, Banana, Cherry, Mango] // Size = 4
+
+### **Adding a Duplicate Element**
+
+**Step 1**
+- Attempting to add: Apple (already exists)
+- The TreeSet checks for duplicates using the compareTo() method.
+**Step 2**
+- The TreeSet remains unchanged since Apple already exists:
+> [Apple, Banana, Cherry, Mango] // Size = 4
+
+### **Removing an Element**
+
+**Step 1**
+- Removing: Banana
+- The TreeSet locates the element using its sorted structure.
+
+**Step 2**
+- TreeSet after removal:
+- [Apple, Cherry, Mango] // Size = 3
+
+### **Checking for Containment**
+
+**Step 1**
+- Checking if TreeSet contains: Apple
+- The TreeSet efficiently checks for existence using its sorted structure.
+
+**Step 2**
+- The result confirms that Apple exists: Does the set contain Apple? Yes
+
+### **Clearing the Set**
+
+**Step 1**
+- Clear all elements from the TreeSet.
+
+**Step 2**
+- TreeSet after clearing:
+> [] (Empty Set) // Size = 0
+
