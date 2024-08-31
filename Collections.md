@@ -466,3 +466,119 @@ Does the set contain Apple? Yes
 **Step 2**
 - HashSet after clearing:
 [] (Empty Set) // Size = 0
+
+```java
+import java.util.HashSet;
+
+public class HashSetExample {
+    public static void main(String[] args) {
+        // Initialize HashSet
+        HashSet<String> fruits = new HashSet<>();
+
+        // Initial state of HashSet
+        System.out.println("Initial State of HashSet: " + fruits);
+
+        // Adding an Element
+        String newElement = "Mango";
+        fruits.add(newElement);
+        System.out.println("After adding " + newElement + ": " + fruits + " // Size = " + fruits.size());
+
+        // Adding More Elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        System.out.println("After adding Apple, Banana, Cherry: " + fruits + " // Size = " + fruits.size());
+
+        // Adding a Duplicate Element
+        String duplicateElement = "Apple";
+        boolean added = fruits.add(duplicateElement);
+        System.out.println("Attempting to add duplicate " + duplicateElement + ": " + (added ? "Added" : "Not Added"));
+        System.out.println("HashSet remains unchanged: " + fruits + " // Size = " + fruits.size());
+
+        // Removing an Element
+        String elementToRemove = "Banana";
+        fruits.remove(elementToRemove);
+        System.out.println("After removing " + elementToRemove + ": " + fruits + " // Size = " + fruits.size());
+
+        // Checking for Containment
+        String elementToCheck = "Apple";
+        boolean containsElement = fruits.contains(elementToCheck);
+        System.out.println("Does the set contain " + elementToCheck + "? " + (containsElement ? "Yes" : "No"));
+
+        // Clearing the Set
+        fruits.clear();
+        System.out.println("After clearing the HashSet: " + fruits + " // Size = " + fruits.size());
+    }
+}
+```
+
+<h3>🟢LinkedHashSet</h3> 
+`LinkedHashSet` is part of the Java Collections Framework and implements the Set interface. It represents a collection that does not allow duplicate elements and maintains a predictable iteration order based on the order of insertion.
+
+### **Key Features of LinkedHashSet**
+
+- **Dynamic Size:** Automatically adjusts its size as elements are added or removed.
+- **Non-Synchronized:** Not thread-safe unless externally synchronized.
+- **Allows Null Elements:** You can add null to the set.
+- **No Duplicates:** Automatically prevents the addition of duplicate elements.
+- **Ordered Iteration:** Maintains the order of elements based on their insertion sequence.
+
+### **Internal Mechanism of LinkedHashSet**
+**Hashing:**
+- When an object is added to a LinkedHashSet, the hashCode() method of the object is called to compute its hash code. This hash code is used to determine the bucket (or index) where the object will be stored.
+- The LinkedHashSet uses this hash code to quickly locate the bucket corresponding to that object.
+
+**Bucket Storage:**
+- Each bucket can store multiple elements, typically in a linked list or tree structure (in case of many collisions).
+In addition to the hash table, a LinkedHashSet maintains a doubly linked list of entries to preserve the insertion order.
+Collision Handling:
+
+- If two different objects produce the same hash code (a collision), the LinkedHashSet uses the equals() method to differentiate between the two objects.
+If the equals() method returns true for two objects, the LinkedHashSet will not add the new object since it considers it a duplicate.
+---
+### **Initial State of LinkedHashSet**
+LinkedHashSet: []
+---
+### **Adding an Element**
+- New Element: Mango
+- The hashCode() method of Mango is called, and an index is calculated.
+---
+### **LinkedHashSet after addition:**
+> [Mango] -> [Null] // Size = 1
+
+- Adding More Elements
+**Step 1**
+- Adding: Apple, Banana, Cherry
+- The hashCode() for each new element is calculated and placed in the appropriate bucket while maintaining the insertion order.
+
+**Step 2 LinkedHashSet after additions:**
+> [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+
+### **Adding a Duplicate Element**
+**Step 1** Attempting to add: Apple (already exists) The hashCode() for Apple is computed, and it points to the same bucket as the existing Apple.
+
+**Step 2** The equals() method is called to check for duplicates. Since it finds an existing Apple, the set remains unchanged:
+
+> [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+
+### **Removing an Element**
+**Step 1 Removing:** 
+- Banana The hashCode() of Banana is calculated, leading to its bucket.
+
+**Step 2 LinkedHashSet after removal:**
+
+> [Mango] -> [Apple] -> [Cherry] -> [Null] // Size = 3
+---
+### **Checking for Containment**
+**Step 1**
+- Checking if LinkedHashSet contains: Apple
+- The hashCode() of Apple is calculated, and it points to the correct bucket.
+
+**Step 2**
+- The equals() method is called, confirming that Apple exists: Does the set contain Apple? Yes
+---
+### **Clearing the Set**
+**Step 1**
+- Clear all elements from the LinkedHashSet.
+**Step 2**
+- LinkedHashSet after clearing: [] (Empty Set) // Size = 0
