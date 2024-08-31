@@ -14,7 +14,7 @@ Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
 ## 1) List Interface 
 The List interface is a part of the Java Collections Framework and extends the Collection interface. It represents an ordered collection, also known as a sequence, and allows for precise control over where elements are inserted. Elements can be accessed by their integer index (position in the list) and searched for within the list.
 
-Key Characteristics:
+<strong>Key Characteristics:</strong>
 Order: Elements in a list are ordered and can be accessed by their position (index).
 Duplicates: A list can contain duplicate elements.
 Indexing: Elements in a list are zero-based indexed.
