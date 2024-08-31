@@ -492,3 +492,74 @@ public class YieldndJoin implements Runnable{
     }
 }
 ```
+---
+## DeadLock
+
+**Definition:** A deadlock is a situation in concurrent programming where two or more threads are unable to proceed because each is waiting for the other to release a resource. This results in all involved threads being stuck indefinitely, leading to a halt in the execution of the program.
+
+### **Conditions for Deadlock**
+- Mutual Exclusion: At least one resource must be held in a non-shareable mode. Only one thread can use the resource at any given time.
+
+- Hold and Wait: A thread holding at least one resource is waiting to acquire additional resources that are currently being held by other threads.
+
+- No Preemption: Resources cannot be forcibly taken from threads; they must be voluntarily released.
+
+- Circular Wait: There must be a circular chain of threads, where each thread is waiting for a resource held by the next thread in the chain.
+
+Example of DeadLock
+
+```java
+
+public class Deadlock {
+    private static final String B1="ProjectA";
+    private static final String B2="ProjectK";
+    
+    public void m1(){
+        
+        synchronized(B1){
+            System.out.println("Working on "+B1+" By Fayazzz");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+            synchronized(B2){
+            System.out.println("Grab:"+B2);   
+        }
+        
+           }
+    }
+    public void m2(){
+    synchronized(B2){
+        System.out.println("Working on "+B2+" By Mani");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+         
+            e.printStackTrace();
+         
+        }
+        synchronized(B1){
+            System.out.println("Lock room :"+B1);
+    }
+    
+    }
+    }
+    public static void main(String[] args) {
+        Deadlock d=new Deadlock();
+        Thread t=new Thread(){
+            public void run(){
+                d.m1();
+            }
+        };
+        t.start();
+        Thread t1=new Thread(){
+            public void run(){
+                d.m2();
+            }
+        };
+        t1.start();
+    }
+}
+```
