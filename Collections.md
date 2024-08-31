@@ -739,7 +739,7 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 **Step 2**
 - TreeSet after additions:
 > [Apple, Banana, Cherry, Mango] // Size = 4
-
+---
 ### **Adding a Duplicate Element**
 
 **Step 1**
@@ -779,3 +779,155 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 - TreeSet after clearing:
 > [] (Empty Set) // Size = 0
 
+```java
+import java.util.TreeSet;
+
+public class TreeSetExample {
+    public static void main(String[] args) {
+        // Creating a TreeSet to store Fruit names
+        TreeSet<String> fruits = new TreeSet<>();
+
+        // Adding elements to the TreeSet
+        fruits.add("Mango");
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        // Displaying the TreeSet
+        System.out.println("TreeSet after additions: " + fruits); // Output: [Apple, Banana, Cherry, Mango]
+
+        // Attempting to add a duplicate element
+        boolean isAdded = fruits.add("Apple");
+        System.out.println("Attempt to add 'Apple': " + (isAdded ? "Added" : "Already exists")); // Already exists
+
+        // Removing an element from the TreeSet
+        fruits.remove("Banana");
+        System.out.println("TreeSet after removing 'Banana': " + fruits); // Output: [Apple, Cherry, Mango]
+
+        // Checking if the TreeSet contains a specific element
+        boolean containsApple = fruits.contains("Apple");
+        System.out.println("Does the TreeSet contain 'Apple'? " + (containsApple ? "Yes" : "No")); // Yes
+
+        // Clearing the TreeSet
+        fruits.clear();
+        System.out.println("TreeSet after clearing: " + fruits); // Output: []
+    }
+}
+```
+### **User Approach in Tree Set**
+
+**Person Class**
+
+```java
+public class Person implements Comparable<Person>{
+    private int pid;
+    private String name;
+    private double sal;
+    private String desg;
+    public int getPid() {
+        return pid;
+    }
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getSal() {
+        return sal;
+    }
+    public void setSal(double sal) {
+        this.sal = sal;
+    }
+    public String getDesg() {
+        return desg;
+    }
+    public void setDesg(String desg) {
+        this.desg = desg;
+    }
+    public Person(int pid, String name, double sal, String desg) {
+        this.pid = pid;
+        this.name = name;
+        this.sal = sal;
+        this.desg = desg;
+    }
+    public Person(){
+
+    }
+    @Override
+    public String toString() {
+        return "Person [pid=" + pid + ", name=" + name + ", sal=" + sal + ", desg=" + desg + "]";
+    }
+    @Override
+    public int compareTo(Person o) {
+       return Integer.compare(this.pid, o.pid);
+    }
+    
+    
+}
+```
+---
+### **For Sorting Order Based on Name(Comparator)**
+```java
+import java.util.Comparator;
+
+public class BasedonName implements Comparator<Person>{
+
+    @Override
+    public int compare(Person o1, Person o2) {
+      return o1.getName().compareTo(o2.getName());
+    }
+    
+}
+```
+---
+### **For Sorting Order Based on Salary(Comparator)**
+
+```java
+import java.util.Comparator;
+
+public class BasedonSal implements Comparator<Person> {
+
+    @Override
+    public int compare(Person o1, Person o2) {
+        return Double.compare(o1.getSal(), o2.getSal());
+    }
+    
+}
+```
+### **To Implement User Approach While Getting Data**
+- Creating Comparator Object Based On User's Request
+
+```java
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class Sets {
+    public static void main(String[] args) {
+       
+Scanner in=new Scanner(System.in);
+        Comparator<Person> p=null;
+        System.out.println("1. Based on Name");
+        System.out.println("2 .Based on Salary");
+        int id=in.nextInt();
+        if(id==1){
+            p=new BasedonName();
+        }
+        else if(id==2){
+            p=new BasedonSal();
+        }
+
+        
+        TreeSet<Person> t1=new TreeSet<>(p);
+        t1.add(new Person(1, "Chanakya", 23, "Dev"));
+        t1.add(new Person(2, "Balu", 34, "Dev"));
+        for (Person person : t1) {
+            System.out.println(person);
+        }
+    }
+}
+```
