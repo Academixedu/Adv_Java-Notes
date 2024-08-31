@@ -256,3 +256,164 @@ public String toString() {
 
 }
 ```
+## **Inheritance**
+
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows one class to inherit the properties (fields) and behaviors (methods) of another class. It promotes code reuse and establishes a hierarchical relationship between classes, enabling a subclass to extend or modify the functionality of a superclass.
+
+**Key Concepts of Inheritance**
+
+**Superclass (Parent Class):**
+- The class whose properties and methods are inherited is called the superclass or parent class.
+
+**Subclass (Child Class):**
+- The class that inherits from the superclass is called the subclass or child class. The subclass can add its own fields and methods or override the methods of the superclass.
+
+**extends Keyword:**
+- In Java, the extends keyword is used to indicate that one class is inheriting from another.
+Single Inheritance:
+
+- Java supports single inheritance, meaning a class can inherit from only one superclass.
+
+**Multilevel Inheritance:**
+- A class can inherit from a subclass, forming a chain of inheritance.
+
+**Method Overriding:**
+A subclass can provide a specific implementation of a method that is already defined in its superclass. This allows the subclass to define its own behavior.
+
+## **Types of Inheritance in Java**
+Inheritance in Java can be classified into several types, each serving a specific purpose in designing relationships between classes. Below are the main types of inheritance along with explanations and examples.
+
+### **Single Inheritance**
+- **Definition:** In single inheritance, a subclass inherits from one superclass only. This is the most straightforward form of inheritance.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat(); // Inherited method from Animal
+        dog.bark(); // Dog's own method
+    }
+}
+```
+### **MultiLevel Inheritance**
+**Definition:** In multilevel inheritance, a subclass inherits from a superclass, and this subclass can serve as a superclass for another subclass, creating a chain of inheritance.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Puppy extends Dog {
+    void weep() {
+        System.out.println("Puppy weeps");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Puppy puppy = new Puppy();
+        puppy.eat(); // Inherited from Animal
+        puppy.bark(); // Inherited from Dog
+        puppy.weep(); // Puppy’s own method
+    }
+}
+```
+---
+### **Hierarchical Inheritance**
+**Definition:** In hierarchical inheritance, multiple subclasses inherit from a single superclass. This creates a tree-like structure.
+
+```java
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        dog.eat(); // Inherited from Animal
+        dog.bark(); // Dog's own method
+        cat.eat(); // Inherited from Animal
+        cat.meow(); // Cat's own method
+    }
+}
+```
+---
+### **Multiple Inheritance (Through Interfaces)**
+
+- **Definition:** In Java, multiple inheritance is not directly supported through classes to avoid ambiguity. However, it can be achieved using interfaces, where a class can implement multiple interfaces.
+
+```
+interface CanBark {
+    void bark();
+}
+
+interface CanMeow {
+    void meow();
+}
+
+class Dog implements CanBark {
+    public void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat implements CanMeow {
+    public void meow() {
+        System.out.println("Cat meows");
+    }
+}
+
+class DogCat extends Dog implements CanMeow {
+    public void meow() {
+        System.out.println("DogCat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        DogCat dogCat = new DogCat();
+
+        dog.bark(); // Dog's method
+        cat.meow(); // Cat's method
+        dogCat.bark(); // Dog's method
+        dogCat.meow(); // DogCat's method
+    }
+}
+```
