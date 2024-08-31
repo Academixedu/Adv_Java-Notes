@@ -719,14 +719,14 @@ fruitsByPrice.add(new Fruit("Apple", 30));
 fruitsByPrice.add(new Fruit("Banana", 40));
 System.out.println(fruitsByPrice); // Output: [Apple (30), Banana (40), Mango (60)]
 ```
-
+---
 ### **Initial State of TreeSet**
 - TreeSet: []
 ---
 ### **Adding an Element**
 New Element: Mango
 The element is added, and the TreeSet automatically maintains the sorted order.
-
+---
 ### **TreeSet after addition:**
 > [Mango] // Size = 1
 
@@ -738,7 +738,7 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 
 **Step 2**
 - TreeSet after additions:
-- [Apple, Banana, Cherry, Mango] // Size = 4
+> [Apple, Banana, Cherry, Mango] // Size = 4
 
 ### **Adding a Duplicate Element**
 
@@ -748,6 +748,7 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 **Step 2**
 - The TreeSet remains unchanged since Apple already exists:
 > [Apple, Banana, Cherry, Mango] // Size = 4
+---
 
 ### **Removing an Element**
 
@@ -757,7 +758,7 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 
 **Step 2**
 - TreeSet after removal:
-- [Apple, Cherry, Mango] // Size = 3
+> [Apple, Cherry, Mango] // Size = 3
 
 ### **Checking for Containment**
 
@@ -767,6 +768,7 @@ The element is added, and the TreeSet automatically maintains the sorted order.
 
 **Step 2**
 - The result confirms that Apple exists: Does the set contain Apple? Yes
+--- 
 
 ### **Clearing the Set**
 
