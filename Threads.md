@@ -19,7 +19,7 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Creating Thread](#Create)
 - [Thread Functions](#Functions)
 - [synchronization](#synchronize)
-- [Wait&Notify](#Wait)
+- [Inter-Thread Communication in Java](Inter-Thread-Communication)
 - [Yield & Join](#YnJ)
 - [Deadlock](#DeadLock)
 
@@ -334,3 +334,84 @@ public class Synchronisation {
     }
 }
 ```
+## Inter-Thread-Communication
+
+Inter-thread communication in Java allows threads to communicate with each other, enabling coordination and synchronization between their execution. The primary methods used for inter-thread communication are wait(), notify(), and notifyAll(), which are defined in the Object class.
+
+**Key Concepts:**
+
+- **Wait and Notify Mechanism:** This mechanism helps manage the communication between threads, especially when one thread needs to wait for a condition to be met before proceeding, while another thread can notify it when the condition has changed.
+
+- **Monitors:** Each object in Java has a monitor, which is a synchronization mechanism that allows threads to lock the object. The wait(), notify(), and notifyAll() methods must be called from within a synchronized block or method to ensure thread safety.
+
+### **The wait() Method:**
+**Purpose:** The wait() method causes the current thread to wait until another thread invokes notify() or notifyAll() on the same object.
+Releases Lock: When a thread calls wait(), it releases the lock on the object, allowing other threads to access it.
+**Usage:** It can be used when a thread is waiting for some condition to be met.
+
+### **The notify() Method:**
+- **Purpose:** The notify() method wakes up a single thread that is waiting on the object's monitor.
+- **Lock Retained:** The thread that calls notify() does not release the lock immediately; it retains it until the current synchronized block or method completes.
+
+### **The notifyAll() Method:**
+- **Purpose:** The notifyAll() method wakes up all the threads that are waiting on the object's monitor.
+- **Lock Retained:** Similar to notify(), the lock is retained until the current synchronized block or method completes.
+
+Example Code
+```java
+public class Bank {
+    public static double Balance=3000;
+    public synchronized void Deposit(double Dep){
+        Balance=Balance+Dep;
+        System.out.println("Balance after Deposit :"+Balance);
+    notify();
+    }
+    public synchronized void Withdrawl(double WD){
+        if(Balance>=WD){
+            System.out.println("Balance after Withdrawl :"+(Balance-=WD));
+        }
+        else{
+            System.out.println("Processing Amount");
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            if(Balance>=WD){
+                System.out.println("Balance after Deducting "+(Balance-=WD));
+            }else{
+                System.out.println("Insufficient Funds");
+            }
+        }
+    }
+    public static void main(String[] args) {
+       Bank b=new Bank();
+        Thread t=new Thread(){
+            public void run(){
+                b.Deposit(3000);
+            }
+        };
+        t.start();
+        t.setPriority(1);
+
+        Thread t1=new Thread(){
+            public void run(){
+                b.Withdrawl(5000);
+            }
+        };
+        t1.start();
+        t1.setPriority(10);
+    }
+}
+```
+### Example Execution Flow
+- Thread t1 (withdrawal thread) starts and attempts to withdraw 5000:
+- It checks the balance (3000) and finds it insufficient.
+- It prints "Processing Amount" and calls wait(), pausing execution.
+- Thread t (deposit thread) starts and deposits 3000:
+- It updates the balance to 6000 and prints "Balance after Deposit: 6000".
+- It calls notify(), waking up the waiting withdrawal thread.
+- Thread t1 resumes:
+- After being notified, it checks the balance again (now 6000).
+- It successfully withdraws 5000 and prints "Balance after Deducting: 1000".
