@@ -159,7 +159,7 @@ public class ArrayListExample {
 
 ---
 
-Inserting an Element
+## Inserting an Element
 ### Step 1
 > [NewNode]
 > [Mango] -> [Null]
@@ -172,7 +172,7 @@ Inserting an Element
 > [Apple] -> [Mango] -> [Date] -> [Banana] -> [Cherry] -> [Null] // Size = 5
 
 ---
- Deleting
+## Deleting
 ### Step 1
 > [Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [Null]
 ### Step 2
