@@ -1378,3 +1378,71 @@ LinkedHashMap is part of the Java Collections Framework and extends the HashMap 
 - **Buckets:** The hash table is divided into buckets, with each bucket capable of holding multiple key-value pairs (in case of hash collisions), ensuring efficient storage and retrieval.
 
 - **Load Factor:** Like HashMap, LinkedHashMap also uses a load factor to determine when to increase the size of the map. The default load factor is 0.75, offering a good balance between time and space cost.
+
+```java
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class LinkedHashMapExample {
+    public static void main(String[] args) {
+        // Creating a LinkedHashMap to store Person objects
+        LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>();
+
+        // Adding key-value pairs to the LinkedHashMap
+        linkedHashMap.put(101, "John Doe");
+        linkedHashMap.put(102, "Jane Smith");
+        linkedHashMap.put(103, "Michael Johnson");
+        linkedHashMap.put(104, "Emily Davis");
+
+        // Adding a duplicate key with a different value
+        linkedHashMap.put(102, "Jane Doe"); // This will replace the existing value
+
+        // Iterating through the LinkedHashMap
+        System.out.println("LinkedHashMap elements:");
+        for (Map.Entry<Integer, String> entry : linkedHashMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+
+        // Accessing a specific value
+        String value = linkedHashMap.get(103);
+        System.out.println("\nValue associated with key 103: " + value);
+
+        // Checking if a key or value exists
+        boolean containsKey = linkedHashMap.containsKey(101);
+        boolean containsValue = linkedHashMap.containsValue("Jane Doe");
+        System.out.println("\nContains key 101: " + containsKey);
+        System.out.println("Contains value 'Jane Doe': " + containsValue);
+
+        // Removing an entry
+        linkedHashMap.remove(104);
+        System.out.println("\nLinkedHashMap after removing key 104:");
+        for (Map.Entry<Integer, String> entry : linkedHashMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+```
+---
+### **Person Class Implementation**
+
+```java
+
+import java.util.LinkedHashMap;
+
+
+public class HahsMapExp {
+    public static void main(String[] args) {
+        
+        LinkedHashMap<Person, String> personMap = new LinkedHashMap<>();
+
+        
+        personMap.put( new Person(1, "Alice", 50000.0, "Developer"), " Alice");
+        personMap.put(new Person(1, "Alicia", 50000.0, "Developer"), "Alicia");
+        personMap.put(new Person(1, "Alice", 50000.0, "Developer"), "Update Alice");
+        personMap.put(new Person(3, "Chanakya", 345, "Dev"), "Diff");
+        personMap.forEach((key, value) -> {
+            System.out.println("Key: " + key + " - Value: " + value);
+        });
+    }
+}
+```
