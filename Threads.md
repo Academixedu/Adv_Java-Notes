@@ -97,8 +97,6 @@ Start the Thread:
 
 **Call the start() method on the Thread object to begin the execution of the thread.**
 
----
-
 ```java
 public class Threads1 implements Runnable{
 
@@ -126,7 +124,7 @@ public class Threads1 implements Runnable{
         }
 }
 ```
---- 
+
 ### 3)Creating a Thread Using an Anonymous Class in Java
 
 In Java, you can create a thread using an anonymous class, which provides a more concise way to define and start a thread without the need to create a separate class. An anonymous class is an unnamed implementation of an interface or extension of a class, defined and instantiated all at once.
@@ -141,7 +139,7 @@ In Java, you can create a thread using an anonymous class, which provides a more
 Start the Thread:
 
 **Call the start() method on the Thread object to initiate the thread's execution.**
----
+
 ```java
 public class Anomous {
 public static void m1(){
@@ -165,3 +163,80 @@ public static void m1(){
     }
 }
 ```
+---
+## Functions
+
+**start()**
+
+Description: This method starts the thread, invoking the run() method in a new thread of execution.
+Usage: Must be called to begin thread execution.
+
+> Thread t = new Thread();
+> t.start();
+
+**run()**
+
+**Description:** This method contains the code that is executed when the thread is started. It can be overridden to define the thread's task.
+**Usage:** Typically overridden in a subclass of Thread.
+
+> public void run() {
+>   // Code to be executed by the thread
+> }
+
+**join()**
+
+**Description:** This method waits for the thread to die (complete execution). It can take an optional timeout parameter.
+**Usage:** Useful when you need to wait for another thread to finish before continuing execution.
+
+> t.join(); // Waits for thread t to finish
+
+**sleep(long millis)**
+
+**Description:** Static method that causes the currently executing thread to sleep for a specified number of milliseconds.
+**Usage:** Can be used to pause the thread's execution temporarily.
+
+> Thread.sleep(1000); // Sleeps for 1 second
+
+**interrupt()**
+
+**Description:** This method interrupts a thread, setting its interrupted status. It does not forcibly stop the thread but signals it to stop if it checks for interruptions.
+**Usage:** Can be used to gracefully stop a thread.
+
+> t.interrupt(); // Interrupts thread t
+
+**isAlive()**
+
+**Description:** This method checks if the thread is still alive (running or has not finished).
+**Usage:** Can be used to determine the state of a thread.
+
+> if (t.isAlive()) {
+>    // Thread is still running
+> }
+
+**setPriority(int priority)**
+
+**Description:** This method sets the priority of the thread. Priorities are integers between Thread.MIN_PRIORITY (1) and Thread.MAX_PRIORITY (10).
+
+**Usage:** Affects the order in which threads are scheduled by the thread scheduler.
+
+> t.setPriority(Thread.MAX_PRIORITY); // Set highest priority
+
+**getPriority()**
+
+**Description:** This method returns the priority of the thread.
+**Usage:** Can be used to retrieve the current priority of the thread.
+
+> int priority = t.getPriority(); // Get the thread's priority
+
+**setName(String name)**
+
+**Description:** This method sets the name of the thread.
+**Usage:** Useful for identifying threads.
+
+> t.setName("MyThread");
+
+**getName()**
+
+**Description:** This method returns the name of the thread.
+**Usage:** Can be used to retrieve the thread's name.
+> String name = t.getName(); // Get the thread's name
