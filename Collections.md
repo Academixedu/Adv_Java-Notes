@@ -333,3 +333,54 @@ public class StackExample {
     }
 }
 ```
+2) Set Interface
+The Set interface is a part of the Java Collections Framework and extends the Collection interface. It represents a collection that does not allow duplicate elements. Sets are used to model mathematical set abstractions and provide a means to store unique elements.
+
+### **Key Characteristics:**
+
+- **Uniqueness:** A set does not allow duplicate elements. If you try to add a duplicate element, the set remains unchanged.
+
+- **No Order:** The elements in a set are unordered, meaning they do not have a specific position or index.
+
+- **Performance:** Sets generally provide faster operations for add, remove, and contains methods compared to lists.
+
+### **Functions in the Set Interface:**
+- boolean add(E element): Adds the specified element to the set if it is not already present.
+
+- boolean remove(Object o): Removes the specified element from the set if it is present.
+
+- boolean contains(Object o): Returns true if the set contains the specified element.
+
+- int size(): Returns the number of elements in the set.
+
+- boolean isEmpty(): Returns true if the set contains no elements.
+
+- Iterator<E> iterator(): Returns an iterator over the elements in the set.
+
+- Object[] toArray(): Returns an array containing all elements in the set.
+
+- boolean containsAll(Collection<?> c): Returns true if the set contains all elements in the specified collection.
+
+- boolean addAll(Collection<? extends E> c): Adds all elements in the specified collection to the set.
+
+- boolean retainAll(Collection<?> c): Retains only the elements in the set that are contained in the specified collection.
+
+- boolean removeAll(Collection<?> c): Removes from the set all of its elements that are contained in the specified collection.
+
+### **Common Subclasses of the Set Interface:**
+
+- **HashSet:**
+Implements the Set interface using a hash table.
+Provides constant-time performance for basic operations (add, remove, contains) on average.
+Does not maintain the order of elements.
+
+- **LinkedHashSet:**
+
+Extends HashSet and maintains a linked list of the entries to preserve the insertion order.
+Provides predictable iteration order.
+
+- **TreeSet:**
+
+Implements the Set interface using a red-black tree.
+Maintains elements in a sorted order.
+Provides logarithmic time performance for the basic operations (add, remove, contains).
