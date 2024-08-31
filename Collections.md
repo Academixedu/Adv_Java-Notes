@@ -127,4 +127,46 @@ public class ArrayListExample {
 }
 
 ```
+<h3>🟢LinkedList</h3>
+`LinkedList` is another important class in the Java Collections Framework. It implements the List interface as a doubly linked list, which allows for efficient insertion and deletion of elements. Unlike `ArrayList`, which is backed by a resizable array, `LinkedList` uses nodes to store data, making it suitable for scenarios where frequent modifications to the list are necessary.
+
+**Features**
+**Dynamic Size:** Automatically adjusts its size with the addition or removal of elements.
+**Efficient Insertions/Deletions:** Insertion and deletion operations are fast (O(1)) when you have a reference to the node.
+**Non-Synchronized:** Not thread-safe unless externally synchronized.**
+Maintains Insertion Order:** Elements are stored in the order they were added.
+**Allows Duplicates:** You can add duplicate elements to the list.
+
+**When to Use:**
+When your application requires frequent insertions and deletions of elements in the middle of the list.
+When you don’t need fast random access to elements by index.
+---
+**Initial State of LinkedList**
+[Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [ 3 ] -> [Null]
+
+[Apple] -> [Date] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+---
+
+---
+Inserting an Element
+### Step 1
+> [NewNode]
+> [Mango] -> [Null]
+
+### Step 2
+
+> [Head] -> [ 0 ] -> [NewNode] -> [ 1 ] -> [ 2 ] -> [ 3 ] -> [Null]
+
+### Step 3
+> [Apple] -> [Mango] -> [Date] -> [Banana] -> [Cherry] -> [Null] // Size = 5
+
+
+---
+---
+After Deleting
+[Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [Null]
+
+[Apple] -> [Date] -> [Cherry] -> [Null] // Size = 3
+---
+
 
