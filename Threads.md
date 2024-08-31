@@ -415,3 +415,18 @@ public class Bank {
 - Thread t1 resumes:
 - After being notified, it checks the balance again (now 6000).
 - It successfully withdraws 5000 and prints "Balance after Deducting: 1000".
+  ---
+## Yield&Join
+### **yield()**
+- **Definition:** A method in the Thread class that causes the currently executing thread to temporarily pause and allow other threads to execute.
+- **Purpose:** To improve the responsiveness of applications by giving other threads a chance to run.
+- **Behavior:** It does not guarantee immediate switching to another thread; it is a suggestion to the thread scheduler.
+
+### **join()**
+- **Definition:** A method in the Thread class that allows one thread to wait for another thread to complete its execution.
+- **Purpose:** To ensure that the current thread pauses until the specified thread finishes.
+- **Behavior:** It can be called with a timeout parameter to limit the wait duration; if the specified thread completes before the timeout, the current thread continues execution.
+
+### **Key Differences**
+- **Yield:** Suggests that the thread yield its execution; does not wait for completion.
+- **Join:** Waits for the specified thread to finish before continuing execution.
