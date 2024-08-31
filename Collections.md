@@ -176,7 +176,7 @@ public class ArrayListExample {
 ### Step 1
 > [Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [Null]
 ### Step 2
-> [Apple] -> [Mango] -> [Cherry] -> [Null] // Size = 4
+> [Apple] -> [Mango] -> [Banana] -> [Cherry] // Size = 4
 ---
 
 ```java
@@ -221,4 +221,70 @@ public class LinkedListExample {
 }
 
 ```
+<h3>🟢 Stack</h3> 
+`Stack` is a class in the Java Collections Framework that represents a last-in, first-out (LIFO) data structure. It allows for storing and managing a collection of elements, where the most recently added element is the first to be removed. Stacks are useful for scenarios that require tracking previous states or implementing function call management.
+
+
+**Features**
+
+- LIFO Order: The last element added to the stack is the first to be removed.
+
+- Dynamic Size: Automatically adjusts its size with the addition or removal of elements.
+
+- Non-Synchronized: Not thread-safe unless externally synchronized.
+
+- Maintains Insertion Order: Elements are stored in the order they were added.
+
+- Allows Duplicates: You can add duplicate elements to the stack.
+
+
+**When to Use:**
+
+- When your application requires tracking of function calls or previous states.
+
+- When implementing undo mechanisms in applications.
+
+- When managing recursive algorithms or backtracking problems.
+
+---
+**Initial State of Stack**
+
+> [Top] -> [0] -> [1] -> [2] -> [3] -> [Null]
+
+> [Apple] -> [Banana] -> [Cherry] -> [Null]
+
+---
+
+**Pushing an Element**
+
+Step 1
+> [NewElement] [Mango] -> [Null]
+
+Step 2
+> [Top] -> [NewElement] -> [0] -> [1] -> [2] -> [3] -> [Null]
+
+Step 3
+> [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+
+---
+
+**Popping an Element**
+
+Step 1
+> [Top] -> [0] -> [1] -> [2] -> [Null]
+
+Step 2
+> [Apple] -> [Banana] -> [Null] // Size = 3
+
+---
+
+**Peeking at the Top Element**
+
+Step 1
+Top Element: Apple (remains unchanged)
+
+Step 2
+Stack remains unchanged: [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null]
+
+---
 
