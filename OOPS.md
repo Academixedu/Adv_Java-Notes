@@ -121,41 +121,9 @@ Encapsulation is one of the fundamental concepts of Object-Oriented Programming 
 **Flexibility and Reusability:**
 - Encapsulation promotes flexibility in code design. Classes can be reused in different contexts without exposing their internal workings.
   
-Example Program of Encapsulation
+### **Concepts to Learn**
 
-```java
-
-public class Student {
-private int sid;
-private String sname;
-private double page;
-public int getSid() {
-    return sid;
-}
-public void setSid(int sid) {
-    this.sid = sid;
-}
-public String getSname() {
-    return sname;
-}
-public void setSname(String sname) {
-    this.sname = sname;
-}
-public double getPage() {
-    return page;
-}
-public void setPage(double page) {
-    this.page = page;
-}
-public Student(int sid, String sname, double page) {
-    this.sid = sid;
-    this.sname = sname;
-    this.page = page;
-}
-
-}
-```
-1. Getters
+**1. Getters**
 **Definition:**
 Getters are public methods that allow access to private fields (attributes) of a class.
 
@@ -177,7 +145,7 @@ public int getSid() {
 }
 ```
 
-2. Setters
+**2. Setters**
 **Definition:**
 Setters are public methods that allow modification of private fields of a class.
 
@@ -198,7 +166,7 @@ public void setSid(int sid) {
     this.sid = sid; // Sets the value of the private field sid
 }
 ```
-3. Constructor
+**3. Constructor**
 **Definition:**
 - A constructor is a special method called when an object of a class is created. It initializes the newly created object and can accept parameters to set initial values for the object's fields.
 
@@ -222,7 +190,7 @@ public Student(int sid, String sname, double page) {
     this.page = page;   // Initialize page field with parameter value
 }
 ```
-3)Two String
+**4. Two String**
 
 toString() method is a special method in Java that is used to provide a string representation of an object. It is defined in the Object class, and all classes in Java inherit this method. When you print an object or convert it to a string, the toString() method is called implicitly.
 
