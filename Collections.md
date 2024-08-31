@@ -59,7 +59,13 @@ When the list size changes infrequently or when elements are mostly added at the
 > [Apple][Banana][Cherry][  ][  ][  ][  ][  ][  ][  ]  // Size = 3, Capacity = 10
 
 ---
+### After Insertion
 
+> [ 0 ] [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ]
+
+> [Apple][Banana][Cherry][  ][  ][  ][  ][  ][  ][  ]  // Size = 3, Capacity = 10
+
+---
 
 ```java
 import java.util.ArrayList;
