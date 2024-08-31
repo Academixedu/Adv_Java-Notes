@@ -417,3 +417,191 @@ public class Main {
     }
 }
 ```
+## Polymorphism
+
+Polymorphism is a core concept in object-oriented programming (OOP) that allows methods to do different things based on the object that it is acting upon. In Java, polymorphism can be categorized mainly into two types: compile-time (or static) polymorphism and runtime (or dynamic) polymorphism.
+
+**1. Compile-Time Polymorphism**
+- Compile-time polymorphism is achieved through method overloading. This means that multiple methods can have the same name but differ in the type or number of parameters. The method to be executed is determined at compile time based on the method signature.
+
+Example
+```java
+class MathOperations {
+    // Method to add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method to add two doubles
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        System.out.println("Sum of 2 and 3: " + math.add(2, 3));            // Calls add(int, int)
+        System.out.println("Sum of 2, 3, and 4: " + math.add(2, 3, 4));    // Calls add(int, int, int)
+        System.out.println("Sum of 2.5 and 3.5: " + math.add(2.5, 3.5));  // Calls add(double, double)
+    }
+}
+```
+
+**2. Runtime Polymorphism**
+- Runtime polymorphism is achieved through method overriding. This allows a subclass to provide a specific implementation of a method that is already defined in its superclass. The method to be executed is determined at runtime based on the object type.
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();  // Animal reference, Dog object
+        Animal myCat = new Cat();  // Animal reference, Cat object
+
+        myDog.sound();  // Calls Dog's sound method
+        myCat.sound();  // Calls Cat's sound method
+    }
+}
+```
+## Abstraction
+Abstraction is a fundamental concept in object-oriented programming (OOP) that focuses on hiding the complex implementation details of a system and exposing only the necessary features to the user. This allows developers to work with high-level functionalities without needing to understand the intricate workings of the underlying code.
+
+## **Key Features of Abstraction**
+
+- **Hiding Complexity:** Abstraction simplifies the interaction with complex systems by hiding unnecessary details, allowing users to focus on what an object does rather than how it does it.
+
+- **Abstract Classes and Interfaces:** In Java, abstraction can be achieved through:
+
+- **Abstract Classes:** Classes that cannot be instantiated and may contain abstract methods (methods without a body) and concrete methods (methods with a body).
+
+- **Interfaces:**  Contracts that define methods that a class must implement without providing the method body.
+Code Reusability: By defining common behaviors in abstract classes or interfaces, code can be reused across different subclasses or implementing classes.
+
+- **Flexibility:** Abstract classes and interfaces allow for multiple implementations, enabling developers to change the behavior of a class without altering its interface.
+
+
+Abstraction in Java
+Abstraction is a fundamental concept in object-oriented programming (OOP) that focuses on hiding the complex implementation details of a system and exposing only the necessary features to the user. This allows developers to work with high-level functionalities without needing to understand the intricate workings of the underlying code.
+
+Key Features of Abstraction
+Hiding Complexity: Abstraction simplifies the interaction with complex systems by hiding unnecessary details, allowing users to focus on what an object does rather than how it does it.
+
+Abstract Classes and Interfaces: In Java, abstraction can be achieved through:
+
+Abstract Classes: Classes that cannot be instantiated and may contain abstract methods (methods without a body) and concrete methods (methods with a body).
+Interfaces: Contracts that define methods that a class must implement without providing the method body.
+Code Reusability: By defining common behaviors in abstract classes or interfaces, code can be reused across different subclasses or implementing classes.
+
+Flexibility: Abstract classes and interfaces allow for multiple implementations, enabling developers to change the behavior of a class without altering its interface.
+
+### **1. Abstract Classes**
+An abstract class can have both abstract methods (without an implementation) and concrete methods (with an implementation). Subclasses must implement the abstract methods.
+
+```java
+abstract class Shape {
+    // Abstract method (does not have a body)
+    abstract void draw();
+
+    // Concrete method
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Circle.");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Rectangle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        Shape rectangle = new Rectangle();
+
+        circle.display();  // Calls concrete method from Shape
+        circle.draw();     // Calls overridden method from Circle
+
+        rectangle.display(); // Calls concrete method from Shape
+        rectangle.draw();    // Calls overridden method from Rectangle
+    }
+}
+```
+### **2. Interfaces**
+An interface in Java is a reference type that can contain only constants, method signatures, default methods, static methods, and nested types. It cannot contain instance fields. All methods in an interface are abstract by default.
+
+Example Code
+
+```java
+interface Animal {
+    void sound(); // Abstract method
+    void eat();   // Abstract method
+}
+
+class Dog implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Dog eats bones");
+    }
+}
+
+class Cat implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+
+    @Override
+    public void eat() {
+        System.out.println("Cat eats fish");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+
+        dog.sound(); // Calls Dog's sound method
+        dog.eat();   // Calls Dog's eat method
+
+        cat.sound(); // Calls Cat's sound method
+        cat.eat();   // Calls Cat's eat method
+    }
+}
+```
