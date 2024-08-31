@@ -20,7 +20,7 @@ A Thread in Java is the smallest unit of execution within a process. It enables 
 - [Thread Functions](#Functions)
 - [synchronization](#synchronize)
 - [Inter-Thread-Communication](Inter-Thread-Communication)
-- [Yield&Join](#Yield&Join)
+- [Yield&Join](#Yield-Join)
 - [Deadlock](#DeadLock)
 
 ## LifeCycle 
@@ -416,7 +416,7 @@ public class Bank {
 - After being notified, it checks the balance again (now 6000).
 - It successfully withdraws 5000 and prints "Balance after Deducting: 1000".
   ---
-## Yield&Join
+## Yield-Join
 ### **yield()**
 - **Definition:** A method in the Thread class that causes the currently executing thread to temporarily pause and allow other threads to execute.
 - **Purpose:** To improve the responsiveness of applications by giving other threads a chance to run.
