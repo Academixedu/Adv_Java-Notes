@@ -80,7 +80,7 @@ public class Threads2 extends Thread {
 ### 2)Creating a Thread by Implementing the Runnable Interface in Java
 Another way to create a thread in Java is by implementing the Runnable interface. This approach is often preferred because it allows the class to inherit from another class if needed while still enabling multithreading.
 
-##**Steps and Procedure**
+### **Steps and Procedure**
 
 **Implement the Runnable Interface:**
 - To create a new thread, a class must implement the Runnable interface and provide an implementation for the run() method. The code inside the run() method defines the task that will be executed by the thread.
