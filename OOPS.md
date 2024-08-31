@@ -15,8 +15,22 @@ different parameters) and method overriding (a subclass redefining a method from
 
 **Abstraction:** The concept of hiding complex implementation details while exposing only the essential features of an object. This can be achieved through abstract classes and interfaces.
 
+<img src="https://static.javatpoint.com/images/java-oops.png" alt="My Image" width="800" height="500">
 
-## **Classes and Objects**
+
+
+
+# Table of Contents
+
+- [Classes&Object](#Classes-Objects)
+- [Encapsulation](#Encapsulation)
+- [Inheritance](#Inheritance)
+- [Polymorphism](#Polymorphism)
+- [Abstraction](#Abstraction)
+
+
+
+## **Classes-Objects**
 
 **1. Classes**
 - A class is a blueprint or template for creating objects. It defines a data type by bundling data (attributes) and methods (functions) that operate on that data.
