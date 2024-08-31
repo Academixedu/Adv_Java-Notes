@@ -1272,3 +1272,24 @@ The Map interface is a part of the Java Collections Framework and represents a c
 **LinkedHashMap:** Extends HashMap and maintains a linked list of the entries to preserve the insertion order. Provides predictable iteration order.
 
 TreeMap: Implements the Map interface using a red-black tree. Maintains the keys in a sorted order. Provides logarithmic time performance for basic operations (put, remove, contains).
+
+🟢 HashMap
+HashMap is part of the Java Collections Framework and implements the Map interface. It represents a collection of key-value pairs where each key is unique. The HashMap allows for efficient retrieval and manipulation of data based on keys.
+
+Key Features of HashMap
+Key-Value Pair: Stores data in key-value pairs, allowing for efficient access to values based on keys.
+
+No Duplicate Keys: Each key must be unique. If a duplicate key is added, the existing value is replaced with the new value.
+
+Dynamic Size: The size of the HashMap grows automatically as elements are added.
+
+Non-Synchronized: Not thread-safe unless externally synchronized.
+
+Performance: Provides constant-time performance for basic operations like put, get, and remove, on average.
+
+Internal Mechanism of HashMap
+Hashing: HashMap uses a hash table to store the key-value pairs. Each key is hashed to determine its position in the table.
+
+Buckets: The table is divided into buckets, and each bucket can hold multiple key-value pairs (in case of hash collisions). This allows for efficient storage and retrieval.
+
+Load Factor: The load factor determines when to increase the size of the map. The default load factor is 0.75, which offers a good balance between time and space cost.
