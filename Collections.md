@@ -381,4 +381,90 @@ Does not maintain the order of elements.
 Maintains elements in a sorted order.
 Provides logarithmic time performance for the basic operations (add, remove, contains).
 
-<h3>🔖HashSet</h3>
+<h3>🟢HashSet</h3>
+HashSet is part of the Java Collections Framework and implements the Set interface.
+It represents a collection that does not allow duplicate elements and does not maintain any particular order.
+
+### **Key Features of HashSet**
+- **Dynamic Size:** Automatically adjusts its size as elements are added or removed.
+- **Non-Synchronized:** Not thread-safe unless externally synchronized.
+- **Allows Null Elements:** You can add null to the set.
+- **No Duplicates:** Automatically prevents the addition of duplicate elements.
+
+### **Internal Mechanism of HashSet**
+
+**Hashing:**
+- When an object is added to a HashSet, the hashCode() method of the object is called to compute its hash code. This hash code is used to determine the bucket (or index) where the object will be stored.
+- The HashSet uses this hash code to quickly locate the bucket corresponding to that object.
+
+**Bucket Storage:**
+- Each bucket can store multiple elements, typically in a linked list or tree structure (in case of many collisions).
+- The index of the bucket is computed as hashCode() % numberOfBuckets.
+
+**Collision Handling:**
+- If two different objects produce the same hash code (a collision), the HashSet uses the equals() method to differentiate between the two objects.
+- If the equals() method returns true for two objects, the HashSet will not add the new object since it considers it a duplicate.
+
+---
+### Initial State of HashSet
+HashSet: []
+---
+### Adding an Element
+**Step 1**
+
+New Element: Mango
+The hashCode() method of Mango is called, and an index is calculated.
+**Step 2**
+---
+### **HashSet after addition:**
+> [Mango] -> [Null] // Size = 1
+- Adding More Elements
+
+**Step 1**
+- Adding: Apple, Banana, Cherry
+- The hashCode() for each new element is calculated and placed in the appropriate bucket.
+
+**Step 2**
+**HashSet after additions:**
+>[Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+---
+
+### **Adding a Duplicate Element**
+
+**Step 1**
+Attempting to add: Apple (already exists)
+The hashCode() for Apple is computed, and it points to the same bucket as the existing Apple.
+
+**Step 2**
+The equals() method is called to check for duplicates. Since it finds an existing Apple, the set remains unchanged:
+> [Mango] -> [Apple] -> [Banana] -> [Cherry] -> [Null] // Size = 4
+
+---
+### **Removing an Element**
+
+**Step 1**
+Removing: Banana
+The hashCode() of Banana is calculated, leading to its bucket.
+
+**Step 2**
+**HashSet after removal:**
+> [Mango] -> [Apple] -> [Cherry] -> [Null] // Size = 3
+---
+
+### **Checking for Containment**
+**Step 1**
+Checking if HashSet contains: Apple
+The hashCode() of Apple is calculated, and it points to the correct bucket.
+
+**Step 2**
+The equals() method is called, confirming that Apple exists:
+Does the set contain Apple? Yes
+---
+
+### **Clearing the Set**
+Step 1
+Clear all elements from the HashSet.
+
+Step 2
+HashSet after clearing:
+[] (Empty Set) // Size = 0
