@@ -240,3 +240,97 @@ public static void m1(){
 - **Description:** This method returns the name of the thread.
 - **Usage:** Can be used to retrieve the thread's name.
 > String name = t.getName(); // Get the thread's name
+
+## Synchronization in Threads
+
+Synchronization in Java is a mechanism that ensures that two or more concurrent threads do not simultaneously execute specific sections of code, preventing data inconsistency and ensuring thread safety. It is essential in multi-threaded programming when multiple threads access shared resources.
+
+**Why Synchronization is Needed**
+
+- **Data Consistency:** When multiple threads modify shared resources (like variables, objects, or data structures), inconsistencies can occur if threads read or write data at the same time.
+- **Prevent Race Conditions:** A race condition occurs when two or more threads attempt to modify shared data concurrently, leading to unpredictable results.
+
+**Types of Synchronization**
+
+**Method Synchronization:**
+- We can synchronize an entire method by using the synchronized keyword in its declaration. Only one thread can execute that method for a given instance at a time.
+
+```java
+ public synchronized void synchronizedMethod() {
+     // Critical section code
+ }
+```
+
+**Block Synchronization:**
+- Instead of synchronizing an entire method, you can synchronize a block of code within a method. This allows for finer control over what gets synchronized.
+
+```java
+public void someMethod() {
+    synchronized (this) {
+        // Critical section code
+    }
+}
+```
+Example Code 
+
+```java
+public class Synchronisation {
+    public  synchronized void m1(){
+        for(int i=1;i<=5;i++){
+            System.out.println("Static "+Thread.currentThread().getName());
+        }
+    }
+ 
+    public static void main(String[] args) {
+    Synchronisation s =new Synchronisation();
+    Thread t=new Thread(){
+        public void run(){
+           s.m1();
+        }
+    }; 
+    t.start();
+    
+    Thread t1=new Thread(){
+        public void run(){
+           s.m1();
+        }
+    }; 
+    t1.start(); 
+    }
+}
+```
+**Static Synchronization in Java**
+
+Static synchronization in Java is used when you want to synchronize access to a static method across all instances of a class. This means that if one thread is executing a static synchronized method, no other thread can execute any static synchronized method of the same class until the first thread completes its execution.
+
+**Why Use Static Synchronization?**
+
+- **Class-Level Locking:** Static synchronization locks the class itself rather than an instance of the class, ensuring that all threads are synchronized on the class level.
+- **Shared Resources:** It is particularly useful when dealing with shared resources that are not tied to a specific instance of a class but are shared among all instances.
+
+```java
+public class Synchronisation {
+    
+    public static synchronized void m2(){
+        for(int i=1;i<=5;i++){
+            System.out.println("Static"+Thread.currentThread().getName());
+        }
+    }
+    public static void main(String[] args) {
+    // Synchronisation s =new Synchronisation();
+    Thread t=new Thread(){
+        public void run(){
+           m2();
+        }
+    }; 
+    t.start();
+    Synchronisation s1 =new Synchronisation();
+    Thread t1=new Thread(){
+        public void run(){
+           m2();
+        }
+    }; 
+    t1.start(); 
+    }
+}
+```
