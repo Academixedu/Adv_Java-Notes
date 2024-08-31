@@ -321,6 +321,7 @@ public class Main {
     }
 }
 ```
+---
 ### **MultiLevel Inheritance**
 **Definition:** In multilevel inheritance, a subclass inherits from a superclass, and this subclass can serve as a superclass for another subclass, creating a chain of inheritance.
 
@@ -430,6 +431,7 @@ public class Main {
         dogCat.meow(); // DogCat's method
     }
 }
+---
 ```
 ## Polymorphism
 
@@ -499,6 +501,8 @@ public class Main {
     }
 }
 ```
+---
+
 ## Abstraction
 Abstraction is a fundamental concept in object-oriented programming (OOP) that focuses on hiding the complex implementation details of a system and exposing only the necessary features to the user. This allows developers to work with high-level functionalities without needing to understand the intricate workings of the underlying code.
 
