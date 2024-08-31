@@ -410,10 +410,8 @@ It represents a collection that does not allow duplicate elements and does not m
 > HashSet: []
 ---
 ### Adding an Element
-**Step 1**
-New Element: Mango
-The hashCode() method of Mango is called, and an index is calculated.
-**Step 2**
+- New Element: Mango
+- The hashCode() method of Mango is called, and an index is calculated.
 ---
 ### **HashSet after addition:**
 > [Mango] -> [Null] // Size = 1
@@ -463,7 +461,7 @@ Does the set contain Apple? Yes
 ### **Clearing the Set**
 
 **Step 1**
-Clear all elements from the HashSet.
+- Clear all elements from the HashSet.
 
 **Step 2**
 HashSet after clearing:
