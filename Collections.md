@@ -151,7 +151,7 @@ public class ArrayListExample {
 - When you don’t need fast random access to elements by index.
 
 ---
-**Initial State of LinkedList**
+## **Initial State of LinkedList**
 
 > [Head] -> [ 0 ] -> [ 1 ] -> [ 2 ] -> [ 3 ] -> [Null]
 
