@@ -334,6 +334,7 @@ public class Synchronisation {
     }
 }
 ```
+---
 ## Inter-Thread-Communication
 
 Inter-thread communication in Java allows threads to communicate with each other, enabling coordination and synchronization between their execution. The primary methods used for inter-thread communication are wait(), notify(), and notifyAll(), which are defined in the Object class.
